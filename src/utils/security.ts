@@ -6,14 +6,21 @@
  * Administrators only to protect the house hunting agency business model.
  */
 
+export const PUBLIC_CONTACT = {
+  name: 'Kelly Muthusi',
+  phone: '+254714038892',
+  whatsapp: '254714038892',
+} as const;
+
 export const ADMIN_CONFIG = {
-  authorizedEmail: 'charlesmunyoki78@gmail.com',
-  defaultPasscode: 'KU-ADMIN-78',
-  role: 'SUPER_ADMIN',
   agencyName: 'KU Room Finders Agency Ltd',
   escrowPaybill: '849201',
   escrowAccountName: 'KU-RE HOUSING ESCROW',
-};
+} as const;
+
+export function buildWhatsAppUrl(message: string): string {
+  return `https://wa.me/${PUBLIC_CONTACT.whatsapp}?text=${encodeURIComponent(message)}`;
+}
 
 /**
  * Mask Caretaker / Landlord phone number to enforce agency business protection.

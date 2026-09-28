@@ -12,7 +12,8 @@ import {
   Printer,
   Sparkles,
   CreditCard,
-  ThumbsUp
+  ThumbsUp,
+  MessageCircle
 } from 'lucide-react';
 import { Booking, HouseHuntingPayment } from '../types';
 import { 
@@ -20,6 +21,7 @@ import {
   maskMpesaCode, 
   maskPhoneNumber, 
   maskCaretakerPhone, 
+  buildWhatsAppUrl,
   formatDiscreetCurrency 
 } from '../utils/security';
 
@@ -208,11 +210,13 @@ export const BookingsModal: React.FC<BookingsModalProps> = ({
                     <span>Caretaker: <strong>{booking.caretakerName}</strong></span>
                     {isAdmin ? (
                       <a
-                        href={`tel:${booking.caretakerPhone}`}
+                        href={buildWhatsAppUrl(`Hello Kelly, I need help with ${booking.propertyTitle}.`)}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="font-bold text-[#047857] flex items-center gap-1 hover:underline"
                       >
-                        <Phone className="w-3 h-3" />
-                        <span>Call ({booking.caretakerPhone})</span>
+                        <MessageCircle className="w-3 h-3" />
+                        <span>WhatsApp Kelly</span>
                       </a>
                     ) : (
                       <span className="text-[11px] text-slate-500 font-mono flex items-center gap-1">

@@ -25,7 +25,7 @@ import {
   Edit
 } from 'lucide-react';
 import { Property, Booking, RoommatePost, AdminSecurityLog, HouseHuntingPayment } from '../types';
-import { ADMIN_CONFIG } from '../utils/security';
+import { ADMIN_CONFIG, buildWhatsAppUrl } from '../utils/security';
 
 interface AdminPanelModalProps {
   isOpen: boolean;
@@ -68,20 +68,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
 }) => {
   if (!isOpen) return null;
 
-  const [enteredPasscode, setEnteredPasscode] = useState('');
-  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<'credentials' | 'payments' | 'approvals' | 'bookings' | 'audit'>('credentials');
-
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (enteredPasscode.trim() === ADMIN_CONFIG.defaultPasscode || enteredPasscode.trim() === 'admin') {
-      onLoginAsAdmin();
-      setErrorMsg(null);
-      setEnteredPasscode('');
-    } else {
-      setErrorMsg(`Invalid passcode. Use authorized key: ${ADMIN_CONFIG.defaultPasscode}`);
-    }
-  };
 
   const pendingProperties = properties.filter((p) => p.approvalStatus === 'pending_review');
   const approvedProperties = properties.filter((p) => p.approvalStatus === 'approved');
@@ -114,7 +101,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                 )}
               </div>
               <p className="text-xs text-slate-400 mt-0.5">
-                Restricted Agency Portal · Authorized: <strong className="text-white">{ADMIN_CONFIG.authorizedEmail}</strong>
+                Restricted Agency Portal · Server authentication required
               </p>
             </div>
           </div>
@@ -143,33 +130,9 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
               </p>
             </div>
 
-            <form onSubmit={handleLogin} className="space-y-4">
-              <div className="relative">
-                <Key className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-                <input
-                  type="password"
-                  value={enteredPasscode}
-                  onChange={(e) => setEnteredPasscode(e.target.value)}
-                  placeholder="Enter Admin Passcode (KU-ADMIN-78)..."
-                  className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none focus:border-[#047857]"
-                />
-              </div>
-
-              {errorMsg && (
-                <p className="text-xs text-red-500 font-medium">{errorMsg}</p>
-              )}
-
-              <button
-                type="submit"
-                className="w-full py-3.5 px-4 bg-[#047857] hover:bg-[#065F46] text-white font-display font-bold text-xs sm:text-sm rounded-2xl shadow-md transition-all active:scale-98"
-              >
-                Authenticate as Administrator
-              </button>
-
-              <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-[11px] text-slate-500 text-left">
-                <strong>Demo Passcode:</strong> <code className="bg-slate-200 px-1 py-0.5 rounded text-slate-800 font-mono font-bold">KU-ADMIN-78</code> or <code className="bg-slate-200 px-1 py-0.5 rounded text-slate-800 font-mono font-bold">admin</code>
-              </div>
-            </form>
+            <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-600 text-left">
+              Administrator access is unavailable in this public client. Configure Firebase Authentication and server-side authorization before enabling the vault.
+            </div>
           </div>
         ) : (
           /* Authenticated Admin Dashboard */
@@ -295,7 +258,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                           </td>
                           <td className="p-3">
                             <a
-                              href={`https://wa.me/${prop.caretakerWhatsApp}?text=Admin%20Inquiry%20regarding%20${encodeURIComponent(prop.title)}`}
+                              href={buildWhatsAppUrl(`Hello Kelly, I need help with ${prop.title}.`)}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="px-2 py-1 rounded-lg bg-emerald-100 text-emerald-800 font-bold text-[10px] inline-flex items-center gap-1 hover:bg-emerald-200"
@@ -313,11 +276,13 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                           <td className="p-3">
                             <div className="flex items-center gap-1.5">
                               <a
-                                href={`tel:${prop.caretakerPhone}`}
-                                className="px-2.5 py-1 rounded-lg bg-slate-900 text-white font-bold text-[10px] inline-flex items-center gap-1 hover:bg-[#047857]"
+                                href={buildWhatsAppUrl(`Hello Kelly, I need help with ${prop.title}.`)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800 font-bold text-[10px] inline-flex items-center gap-1 hover:bg-emerald-200"
                               >
-                                <Phone className="w-3 h-3 text-amber-300" />
-                                <span>Call</span>
+                                <MessageCircle className="w-3 h-3" />
+                                <span>WhatsApp Kelly</span>
                               </a>
                               {onOpenEditProperty && (
                                 <button

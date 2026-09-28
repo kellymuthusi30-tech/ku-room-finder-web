@@ -1,4 +1,5 @@
 import { Property, RoommatePost, AdminSecurityLog } from '../types';
+import { PUBLIC_CONTACT } from '../utils/security';
 
 export const ROOM_IMAGES = {
   heroBanner: '/src/assets/images/ku_hero_banner_1790283699563.jpg',
@@ -35,11 +36,9 @@ export const PROPERTIES: (Property & { hotspots?: RoomHotspot[] })[] = [
     reviewCount: 84,
     vacantRoomsCount: 3,
     totalRooms: 48,
-    caretakerName: 'Mama Brian (Caretaker)',
-    caretakerPhone: '+254 722 410 882',
-    caretakerWhatsApp: '254722410882',
-    caretakerNationalId: '24981452', // SENSITIVE (Admin only)
-    landlordPayoutMpesa: '0722410882', // SENSITIVE (Admin only)
+    caretakerName: 'KU Room Finders Support',
+    caretakerPhone: '',
+    caretakerWhatsApp: PUBLIC_CONTACT.whatsapp,
     approvalStatus: 'approved',
     addressDescription: 'KM Stage, directly opposite KM Pedestrian Footbridge, 2nd building behind Equity Bank Agent',
     amenities: [
@@ -83,11 +82,9 @@ export const PROPERTIES: (Property & { hotspots?: RoomHotspot[] })[] = [
     reviewCount: 62,
     vacantRoomsCount: 2,
     totalRooms: 32,
-    caretakerName: 'Mr. Njuguna',
-    caretakerPhone: '+254 713 884 921',
-    caretakerWhatsApp: '254713884921',
-    caretakerNationalId: '19874210', // SENSITIVE (Admin only)
-    landlordPayoutMpesa: '0713884921', // SENSITIVE (Admin only)
+    caretakerName: 'KU Room Finders Support',
+    caretakerPhone: '',
+    caretakerWhatsApp: PUBLIC_CONTACT.whatsapp,
     approvalStatus: 'approved',
     addressDescription: 'Wendani Matatu Stage, near QuickMart Supermarket & Shell Petrol Station',
     amenities: [
@@ -130,11 +127,9 @@ export const PROPERTIES: (Property & { hotspots?: RoomHotspot[] })[] = [
     reviewCount: 110,
     vacantRoomsCount: 5,
     totalRooms: 60,
-    caretakerName: 'Elder Joseph & Matron Sarah',
-    caretakerPhone: '+254 720 193 456',
-    caretakerWhatsApp: '254720193456',
-    caretakerNationalId: '12490514', // SENSITIVE (Admin only)
-    landlordPayoutMpesa: '0720193456', // SENSITIVE (Admin only)
+    caretakerName: 'KU Room Finders Support',
+    caretakerPhone: '',
+    caretakerWhatsApp: PUBLIC_CONTACT.whatsapp,
     approvalStatus: 'approved',
     addressDescription: 'Kahawa Sukari 2nd South Avenue, opposite Sukari Presbyterian Church',
     amenities: [
@@ -173,11 +168,9 @@ export const PROPERTIES: (Property & { hotspots?: RoomHotspot[] })[] = [
     reviewCount: 45,
     vacantRoomsCount: 4,
     totalRooms: 40,
-    caretakerName: 'Johnstone (Caretaker)',
-    caretakerPhone: '+254 728 554 120',
-    caretakerWhatsApp: '254728554120',
-    caretakerNationalId: '27891244',
-    landlordPayoutMpesa: '0728554120',
+    caretakerName: 'KU Room Finders Support',
+    caretakerPhone: '',
+    caretakerWhatsApp: PUBLIC_CONTACT.whatsapp,
     approvalStatus: 'approved',
     addressDescription: 'KM Behind KU Catholic Chapel, Lane 3',
     amenities: [
@@ -208,8 +201,8 @@ export const ROOMMATE_POSTS: RoommatePost[] = [
     targetRoomType: '1-Bedroom Apartment (to share)',
     bio: 'Easy-going, spends most time coding or studying in the library. Non-smoker, clean and respectful of personal space.',
     lookingFor: 'Looking for a fellow male KU student to split a spacious 1-bedroom at Wendani (Crown Heights or nearby). Target rent KES 13,000 total so we pay KES 6,500 each.',
-    contactPhone: '+254 745 112 390',
-    contactWhatsApp: '254745112390',
+    contactPhone: '',
+    contactWhatsApp: PUBLIC_CONTACT.whatsapp,
     createdAt: '2 days ago',
     verifiedStudent: true,
     status: 'active',
@@ -225,8 +218,8 @@ export const ROOMMATE_POSTS: RoommatePost[] = [
     targetRoomType: 'Spacious Bedsitter or 1-Bed',
     bio: 'Pharmacy student with intense study schedules. Very organized, love a quiet clean house, cook delicious homemade meals.',
     lookingFor: 'Seeking a disciplined female student (preferably nursing/pharmacy/health sciences) to split a large bedsitter or 1-bedroom in KM to cut costs and commute time.',
-    contactPhone: '+254 719 832 105',
-    contactWhatsApp: '254719832105',
+    contactPhone: '',
+    contactWhatsApp: PUBLIC_CONTACT.whatsapp,
     createdAt: 'Yesterday',
     verifiedStudent: true,
     status: 'active',
@@ -242,8 +235,8 @@ export const ROOMMATE_POSTS: RoommatePost[] = [
     targetRoomType: 'Executive 1-Bedroom or Twin Hostel',
     bio: 'Friendly, love sports (KU Rugby team fan), respectful, keep shared spaces clean, non-smoker.',
     lookingFor: 'Looking for a flatmate in Kahawa Sukari. Ready to move in next month when the semester resumes.',
-    contactPhone: '+254 788 450 912',
-    contactWhatsApp: '254788450912',
+    contactPhone: '',
+    contactWhatsApp: PUBLIC_CONTACT.whatsapp,
     createdAt: '4 days ago',
     verifiedStudent: true,
     status: 'active',
@@ -259,8 +252,8 @@ export const ROOMMATE_POSTS: RoommatePost[] = [
     targetRoomType: '1-Bedroom Apartment',
     bio: 'Christian, quiet, loves reading. Cooks on weekends. No late-night noise or parties.',
     lookingFor: 'Female roommate to share 1-bedroom near QuickMart Wendani. Rent is KES 10,000 total, split evenly.',
-    contactPhone: '+254 702 119 443',
-    contactWhatsApp: '254702119443',
+    contactPhone: '',
+    contactWhatsApp: PUBLIC_CONTACT.whatsapp,
     createdAt: '3 days ago',
     verifiedStudent: true,
     status: 'active',

@@ -17,7 +17,7 @@ import {
   EyeOff
 } from 'lucide-react';
 import { RoommatePost, Neighborhood } from '../types';
-import { maskPhoneNumber, formatDiscreetCurrency } from '../utils/security';
+import { buildWhatsAppUrl, maskPhoneNumber, formatDiscreetCurrency, PUBLIC_CONTACT } from '../utils/security';
 
 interface RoommateBoardProps {
   posts: RoommatePost[];
@@ -71,8 +71,8 @@ export const RoommateBoard: React.FC<RoommateBoardProps> = ({
       targetRoomType: targetRoom,
       bio: bio.trim() || 'KU Student looking for a quiet, organized flatmate.',
       lookingFor: lookingFor.trim() || 'Looking for someone to split rent and bills.',
-      contactPhone: phone.trim(),
-      contactWhatsApp: phone.replace(/[^0-9]/g, ''),
+      contactPhone: '',
+      contactWhatsApp: PUBLIC_CONTACT.whatsapp,
       createdAt: 'Just now',
       verifiedStudent: true,
       status: 'active',
@@ -237,7 +237,7 @@ export const RoommateBoard: React.FC<RoommateBoardProps> = ({
                 )}
 
                 <a
-                  href={`https://wa.me/${post.contactWhatsApp}?text=Hi%20${encodeURIComponent(post.studentName)},%20I%20saw%20your%20roommate%20listing%20on%20KU%20Room%20Finders.`}
+                  href={buildWhatsAppUrl(`Hello Kelly, I am interested in the roommate listing for ${post.preferredLocation}.`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3.5 py-2 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold flex items-center gap-1.5 transition-colors shadow-2xs"

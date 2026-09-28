@@ -29,6 +29,7 @@ import confetti from 'canvas-confetti';
 import { Property, Booking, HouseHuntingPayment } from '../types';
 import { RoomHotspot } from '../data/mockData';
 import { 
+  buildWhatsAppUrl,
   maskNationalId, 
   maskPayoutAccount, 
   maskCaretakerPhone, 
@@ -378,16 +379,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
                   )}
 
                   <a
-                    href={`tel:${property.caretakerPhone}`}
-                    className="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold flex items-center gap-1.5 transition-colors"
-                    title={`Admin Call: ${property.caretakerPhone}`}
-                  >
-                    <Phone className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>Call ({property.caretakerPhone})</span>
-                  </a>
-
-                  <a
-                    href={`https://wa.me/${property.caretakerWhatsApp}?text=Hello%20${encodeURIComponent(property.caretakerName)},%20I%20am%20calling%20from%20KU%20Room%20Finders%20Admin%20regarding%20${encodeURIComponent(property.title)}.`}
+                    href={buildWhatsAppUrl(`Hello Kelly, I need help with ${property.title}.`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3.5 py-2 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold flex items-center gap-1.5 transition-colors shadow-sm"

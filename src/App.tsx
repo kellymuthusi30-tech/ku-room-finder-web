@@ -43,80 +43,11 @@ import { BookingsModal } from './components/BookingsModal';
 import { AdminPanelModal } from './components/AdminPanelModal';
 import { DiscreetPaymentModal } from './components/DiscreetPaymentModal';
 import { DiscreetViewingPassModal } from './components/DiscreetViewingPassModal';
+import { PUBLIC_CONTACT } from './utils/security';
 
-const INITIAL_HOUSE_HUNTING_PAYMENTS: HouseHuntingPayment[] = [
-  {
-    id: 'FREE-892011',
-    studentName: 'Charles Munyoki',
-    studentRegNo: 'E37/4820/2023',
-    studentPhone: '0712345678',
-    targetNeighborhood: 'KM Gate',
-    propertyId: 'prop-1',
-    propertyTitle: 'Olive Executive Studios & Bedsitters',
-    tier: 'free_viewing',
-    amount: 0,
-    billingDescriptor: 'ZERO CHARGE (FREE VIEWING PASS)',
-    mpesaCode: 'FREE-ESCORT-PASS',
-    timestamp: '2026-09-24 13:42:10',
-    scheduledDate: 'Tomorrow',
-    scheduledTime: '10:00 AM - 12:00 PM',
-    pickupGate: 'KM Gate',
-    escortAgentAssigned: 'Agent Otieno (KM Gate Escort #02)',
-    clearancePassCode: 'PASS-KU-8492',
-    status: 'active',
-    notes: '100% Free Physical Viewing Pass. Pay only after viewing if satisfied.',
-    isFreeViewing: true,
-    paymentTiming: 'free_viewing_upfront',
-  },
-  {
-    id: 'PAY-892012',
-    studentName: 'Faith Wanjiku',
-    studentRegNo: 'P15/3910/2022',
-    studentPhone: '0719832105',
-    targetNeighborhood: 'Kahawa Wendani',
-    propertyId: 'prop-2',
-    propertyTitle: 'Crown Heights Modern 1-Bedroom Flats',
-    tier: 'holding_deposit',
-    amount: 1000,
-    billingDescriptor: 'KU-RE HOUSING ESCROW',
-    mpesaCode: 'QJ91K442KU',
-    timestamp: '2026-09-24 14:05:32',
-    scheduledDate: 'This Friday',
-    scheduledTime: '2:00 PM - 3:30 PM',
-    pickupGate: 'Nyayo Gate',
-    escortAgentAssigned: 'Agent Mercy (KM Specialist #07)',
-    clearancePassCode: 'PASS-KU-9914',
-    status: 'active',
-    notes: 'Unit holding deposit held in agency escrow for Crown Heights.',
-    isFreeViewing: false,
-    paymentTiming: 'paid_after_viewing',
-  },
-];
+const INITIAL_HOUSE_HUNTING_PAYMENTS: HouseHuntingPayment[] = [];
 
-const INITIAL_BOOKINGS: Booking[] = [
-  {
-    id: 'VIEW-8492',
-    propertyId: 'prop-1',
-    propertyTitle: 'Olive Executive Studios & Bedsitters',
-    neighborhood: 'KM Gate',
-    roomType: 'bedsit',
-    studentName: 'Charles Munyoki',
-    studentRegNo: 'E37/4820/2023',
-    studentPhone: '0712345678',
-    depositAmount: 0,
-    mpesaCode: 'FREE-PASS',
-    status: 'viewing_scheduled',
-    bookingDate: '2026-09-24',
-    viewingDate: 'Tomorrow',
-    viewingTime: '10:00 AM - 12:00 PM',
-    caretakerName: 'Mr. James Maina',
-    caretakerPhone: '+254 722 384 921',
-    clearancePassCode: 'PASS-KU-8492',
-    isDiscreet: false,
-    isFreeViewing: true,
-    paymentStatus: 'free_viewing_zero_cost',
-  },
-];
+const INITIAL_BOOKINGS: Booking[] = [];
 
 export default function App() {
   // Navigation tabs: 'properties' | 'roommates' | 'campus-map'
@@ -201,8 +132,8 @@ export default function App() {
       bookingDate: new Date().toLocaleDateString(),
       viewingDate: payment.scheduledDate,
       viewingTime: payment.scheduledTime,
-      caretakerName: 'Agency Escort Coordinator',
-      caretakerPhone: '+254 722 410 882',
+      caretakerName: PUBLIC_CONTACT.name,
+      caretakerPhone: PUBLIC_CONTACT.phone,
       clearancePassCode: payment.clearancePassCode,
       isDiscreet: isDiscreetMode,
       isFreeViewing: payment.amount === 0,

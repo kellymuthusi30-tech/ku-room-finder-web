@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import { Property, Neighborhood, RoomType, CampusGate } from '../types';
 import { ROOM_IMAGES } from '../data/mockData';
+import { PUBLIC_CONTACT } from '../utils/security';
 
 interface ListPropertyModalProps {
   isOpen: boolean;
@@ -137,10 +138,10 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
       totalRooms: 20,
       // SENSITIVE CREDENTIALS (Admin Only)
       caretakerName: caretakerName.trim(),
-      caretakerPhone: caretakerPhone.trim(),
-      caretakerWhatsApp: caretakerPhone.replace(/[^0-9]/g, ''),
-      caretakerNationalId: caretakerNationalId.trim(),
-      landlordPayoutMpesa: payoutMpesa.trim() || caretakerPhone.trim(),
+      caretakerPhone: '',
+      caretakerWhatsApp: PUBLIC_CONTACT.whatsapp,
+      caretakerNationalId: undefined,
+      landlordPayoutMpesa: undefined,
       approvalStatus: 'pending_review',
       addressDescription: addressDesc.trim() || `${neighborhood}, near KU Campus`,
       amenities: amenitiesList,

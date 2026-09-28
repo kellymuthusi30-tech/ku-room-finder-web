@@ -19,7 +19,7 @@ import {
   Edit
 } from 'lucide-react';
 import { Property } from '../types';
-import { formatDiscreetCurrency, maskCaretakerPhone } from '../utils/security';
+import { buildWhatsAppUrl, formatDiscreetCurrency, maskCaretakerPhone } from '../utils/security';
 
 interface PropertyCardProps {
   property: Property;
@@ -232,15 +232,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
                   </button>
                 )}
                 <a
-                  href={`tel:${property.caretakerPhone}`}
-                  onClick={(e) => e.stopPropagation()}
-                  className="w-8 h-8 rounded-xl bg-slate-900 text-white flex items-center justify-center transition-colors shadow-2xs hover:bg-[#047857]"
-                  title={`Admin Call Caretaker: ${property.caretakerPhone}`}
-                >
-                  <Phone className="w-3.5 h-3.5 text-amber-300" />
-                </a>
-                <a
-                  href={`https://wa.me/${property.caretakerWhatsApp}?text=Hello%20${encodeURIComponent(property.caretakerName)},%20I%20am%20calling%20from%20KU%20Room%20Finders%20Admin%20regarding%20${encodeURIComponent(property.title)}.`}
+                  href={buildWhatsAppUrl(`Hello Kelly, I need help with ${property.title}.`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}

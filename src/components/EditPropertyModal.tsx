@@ -17,7 +17,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import { Property, Neighborhood, RoomType, CampusGate } from '../types';
-import { maskCaretakerPhone, maskNationalId, maskPayoutAccount } from '../utils/security';
+import { maskCaretakerPhone, maskNationalId, maskPayoutAccount, PUBLIC_CONTACT } from '../utils/security';
 
 interface EditPropertyModalProps {
   isOpen: boolean;
@@ -136,14 +136,11 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
       description: description.trim() || property.description,
       images: updatedImages,
       amenities: amenitiesList.length > 0 ? amenitiesList : property.amenities,
-      // If admin, update caretaker credentials. If non-admin, PRESERVE original sensitive credentials!
-      caretakerName: isAdmin ? caretakerName.trim() : property.caretakerName,
-      caretakerPhone: isAdmin ? caretakerPhone.trim() : property.caretakerPhone,
-      caretakerWhatsApp: isAdmin
-        ? (caretakerWhatsApp ? caretakerWhatsApp.replace(/[^0-9]/g, '') : caretakerPhone.replace(/[^0-9]/g, ''))
-        : property.caretakerWhatsApp,
-      caretakerNationalId: isAdmin ? caretakerNationalId.trim() : property.caretakerNationalId,
-      landlordPayoutMpesa: isAdmin ? landlordPayoutMpesa.trim() : property.landlordPayoutMpesa,
+      caretakerName: 'KU Room Finders Support',
+      caretakerPhone: '',
+      caretakerWhatsApp: PUBLIC_CONTACT.whatsapp,
+      caretakerNationalId: undefined,
+      landlordPayoutMpesa: undefined,
       // Admin statuses
       approvalStatus: isAdmin ? approvalStatus : property.approvalStatus,
       isVerified: isAdmin ? isVerified : property.isVerified,
