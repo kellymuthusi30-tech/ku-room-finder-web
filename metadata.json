@@ -1,0 +1,6 @@
+{
+  "name": "KU Room Finders - Verified Hostels & Discreet House Hunting Escrow",
+  "description": "Find verified student hostels, bedsitters, single rooms, and apartments around Kenyatta University (KM, Wendani, Sukari, Ruiru) with discreet viewing passes and escrow protection.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
