@@ -1,12 +1,12 @@
 import React from 'react';
-import { 
-  X, 
-  Calendar, 
-  Phone, 
-  MapPin, 
-  CheckCircle2, 
-  BookmarkCheck, 
-  Shield, 
+import {
+  X,
+  Calendar,
+  Phone,
+  MapPin,
+  CheckCircle2,
+  BookmarkCheck,
+  Shield,
   Lock,
   Ticket,
   Printer,
@@ -16,13 +16,13 @@ import {
   MessageCircle
 } from 'lucide-react';
 import { Booking, HouseHuntingPayment } from '../types';
-import { 
-  maskRegNumber, 
-  maskMpesaCode, 
-  maskPhoneNumber, 
-  maskCaretakerPhone, 
+import {
+  maskRegNumber,
+  maskMpesaCode,
+  maskPhoneNumber,
+  maskCaretakerPhone,
   buildWhatsAppUrl,
-  formatDiscreetCurrency 
+  formatDiscreetCurrency
 } from '../utils/security';
 
 interface BookingsModalProps {
@@ -98,7 +98,7 @@ export const BookingsModal: React.FC<BookingsModalProps> = ({
                   <div className="flex items-start justify-between gap-2">
                     <div>
                       <span className="text-[10px] font-bold text-[#2563EB] uppercase tracking-wider block">
-                        Ref #{booking.id} {booking.clearancePassCode ? `Â· ${booking.clearancePassCode}` : ''}
+                        Ref #{booking.id} {booking.clearancePassCode ? ` ${booking.clearancePassCode}` : ''}
                       </span>
                       <h4 className="font-display font-bold text-sm text-slate-900">
                         {booking.propertyTitle}
@@ -195,7 +195,7 @@ export const BookingsModal: React.FC<BookingsModalProps> = ({
                         </span>
                         {!isAdmin && (
                           <span className="text-[9px] text-blue-600 block">
-                            Protected Â· Unmasked in Admin Vault
+                            Protected  Unmasked in Admin Vault
                           </span>
                         )}
                       </div>

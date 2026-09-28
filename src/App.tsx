@@ -1,11 +1,11 @@
 import React, { useState, useMemo } from 'react';
-import { 
-  Building2, 
-  MapPin, 
-  Footprints, 
-  Search, 
-  Heart, 
-  ShieldCheck, 
+import {
+  Building2,
+  MapPin,
+  Footprints,
+  Search,
+  Heart,
+  ShieldCheck,
   GraduationCap,
   Sparkles,
   Phone,
@@ -17,17 +17,17 @@ import {
   EyeOff,
   ThumbsUp
 } from 'lucide-react';
-import { 
-  Property, 
-  RoommatePost, 
-  Booking, 
-  Neighborhood, 
+import {
+  Property,
+  RoommatePost,
+  Booking,
+  Neighborhood,
   RoomType,
   AdminSecurityLog,
   HouseHuntingPayment
 } from './types';
-import { 
-  PROPERTIES as INITIAL_PROPERTIES, 
+import {
+  PROPERTIES as INITIAL_PROPERTIES,
   ROOMMATE_POSTS as INITIAL_ROOMMATES,
   INITIAL_SECURITY_LOGS
 } from './data/mockData';
@@ -149,7 +149,7 @@ export default function App() {
       actor: 'ESCROW_GATEWAY',
       action: payment.amount === 0 ? 'FREE_VIEWING_PASS_ISSUED' : 'DISCREET_PAYMENT_CLEARED',
       entityType: 'payment_escrow',
-      details: payment.amount === 0 
+      details: payment.amount === 0
         ? `Free viewing pass ${payment.clearancePassCode} issued (KES 0). Pay-after-viewing policy active.`
         : `Payment of KES ${payment.amount} under ${payment.billingDescriptor} verified. Clearance Pass ${payment.clearancePassCode} generated.`,
       securityLevel: 'high',
@@ -300,7 +300,7 @@ export default function App() {
   ]);
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 flex flex-col selection:bg-[#2563EB] selection:text-white">
+    <div className="min-h-screen overflow-x-hidden bg-[#F8FAFC] text-slate-900 flex flex-col selection:bg-[#2563EB] selection:text-white">
       {/* Top Bar Contract with Free Viewing & Discreet Mode */}
       <Navbar
         activeTab={activeTab}
@@ -488,8 +488,8 @@ export default function App() {
             <span className="font-display font-bold text-slate-900">
               KU Room Finders
             </span>
-            <span className="text-slate-300">Â·</span>
-            <span>100% Free Room Viewings Â· Pay After Viewing Escrow System</span>
+            <span className="text-slate-300"></span>
+            <span>100% Free Room Viewings  Pay After Viewing Escrow System</span>
           </div>
 
           <div className="flex items-center gap-4 font-medium text-slate-600">

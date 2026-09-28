@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { 
-  Users, 
-  Plus, 
-  MapPin, 
-  MessageCircle, 
-  GraduationCap, 
-  ShieldCheck, 
-  Search, 
-  Filter, 
-  Sparkles, 
-  HeartHandshake, 
-  Trash2, 
-  Lock, 
+import {
+  Users,
+  Plus,
+  MapPin,
+  MessageCircle,
+  GraduationCap,
+  ShieldCheck,
+  Search,
+  Filter,
+  Sparkles,
+  HeartHandshake,
+  Trash2,
+  Lock,
   Phone,
   Eye,
   EyeOff
@@ -221,7 +221,7 @@ export const RoommateBoard: React.FC<RoommateBoardProps> = ({
               <div className="flex items-center gap-1.5 text-xs text-slate-500 font-semibold">
                 <MapPin className="w-3.5 h-3.5 text-[#2563EB]" />
                 <span>Prefers {post.preferredLocation}</span>
-                <span className="text-slate-300">Â·</span>
+                <span className="text-slate-300"></span>
                 <span className="text-[11px] text-slate-400 font-normal">{post.createdAt}</span>
               </div>
 
@@ -266,7 +266,7 @@ export const RoommateBoard: React.FC<RoommateBoardProps> = ({
                 onClick={() => setIsModalOpen(false)}
                 className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center"
               >
-                âœ•
+
               </button>
             </div>
 

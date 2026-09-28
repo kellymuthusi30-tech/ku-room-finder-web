@@ -1,12 +1,12 @@
 import React from 'react';
-import { 
-  Search, 
-  MapPin, 
-  Home, 
-  SlidersHorizontal, 
-  ShieldCheck, 
-  Footprints, 
-  CheckCircle2, 
+import {
+  Search,
+  MapPin,
+  Home,
+  SlidersHorizontal,
+  ShieldCheck,
+  Footprints,
+  CheckCircle2,
   Sparkles,
   Bed,
   DoorClosed,
@@ -85,7 +85,7 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
           {/* Top Pill / Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 backdrop-blur-md text-blue-300 text-xs font-bold mb-4 border border-blue-400/30 shadow-xs">
             <ShieldCheck className="w-4 h-4 text-[#F59E0B]" />
-            <span>100% Free Room Viewings Â· Pay Only After You Inspect & Approve the Room</span>
+            <span>100% Free Room Viewings  Pay Only After You Inspect & Approve the Room</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-display font-black text-white tracking-tight leading-tight text-balance">
@@ -93,7 +93,7 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
           </h1>
 
           <p className="text-xs sm:text-base text-slate-200 mt-3 max-w-2xl leading-relaxed font-medium">
-            Zero upfront broker fees! Schedule an escorted physical room inspection for free at KM Gate, Nyayo Gate, or Wendani. Test water, power tokens, and security first â€” <strong>payment happens only after viewing</strong> if you decide to take the unit.
+            Zero upfront broker fees! Schedule an escorted physical room inspection for free at KM Gate, Nyayo Gate, or Wendani. Test water, power tokens, and security first  <strong>payment happens only after viewing</strong> if you decide to take the unit.
           </p>
 
           {/* Business Action Strip: Free Viewing Pass & House Listing Job */}
@@ -196,7 +196,7 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
                 onClick={() => setSearchQuery('')}
                 className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-slate-700 font-bold cursor-pointer"
               >
-                âœ•
+
               </button>
             )}
           </div>
@@ -269,7 +269,7 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
             }`}
           >
             <Footprints className="w-3.5 h-3.5 text-[#D97706]" />
-            <span>â‰¤ 10 Mins Walk to Campus</span>
+            <span> 10 Mins Walk to Campus</span>
           </button>
         </div>
       </div>

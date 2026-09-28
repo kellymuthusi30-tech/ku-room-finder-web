@@ -1,15 +1,15 @@
 import React from 'react';
-import { 
-  X, 
-  ShieldCheck, 
-  QrCode, 
-  Printer, 
-  MapPin, 
-  Calendar, 
-  Clock, 
-  User, 
-  Lock, 
-  CheckCircle2, 
+import {
+  X,
+  ShieldCheck,
+  QrCode,
+  Printer,
+  MapPin,
+  Calendar,
+  Clock,
+  User,
+  Lock,
+  CheckCircle2,
   Sparkles,
   Download,
   ThumbsUp
@@ -83,7 +83,7 @@ export const DiscreetViewingPassModal: React.FC<DiscreetViewingPassModalProps> =
               ACCREDITED OFF-CAMPUS HOUSING PLACEMENT BUREAU
             </span>
             <p className="text-[11px] text-slate-400 mt-1 font-mono">
-              Main Office: KM Gate Centre, 2nd Floor Â· P.O Box 43844-00100 Nairobi
+              Main Office: KM Gate Centre, 2nd Floor  P.O Box 43844-00100 Nairobi
             </p>
           </div>
 
@@ -137,7 +137,7 @@ export const DiscreetViewingPassModal: React.FC<DiscreetViewingPassModalProps> =
             </div>
             <div className="flex justify-between py-1.5 border-b border-slate-100">
               <span className="text-slate-500 font-medium">Scheduled Viewing Slot:</span>
-              <span className="font-bold text-slate-900">{pass.scheduledDate} Â· {pass.scheduledTime}</span>
+              <span className="font-bold text-slate-900">{pass.scheduledDate}  {pass.scheduledTime}</span>
             </div>
             <div className="flex justify-between py-1.5 border-b border-slate-100">
               <span className="text-slate-500 font-medium">Assigned Escort Agent:</span>

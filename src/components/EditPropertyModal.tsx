@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  X, 
-  Building2, 
-  MapPin, 
-  DollarSign, 
-  Phone, 
-  Check, 
-  Sparkles, 
-  Lock, 
-  Unlock, 
-  ShieldCheck, 
+import {
+  X,
+  Building2,
+  MapPin,
+  DollarSign,
+  Phone,
+  Check,
+  Sparkles,
+  Lock,
+  Unlock,
+  ShieldCheck,
   AlertCircle,
   Eye,
   Key,
@@ -437,7 +437,7 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
                   className="text-[11px] font-bold text-[#2563EB] hover:underline flex items-center gap-1 cursor-pointer"
                 >
                   <Key className="w-3.5 h-3.5" />
-                  <span>Log into Admin Security Vault to edit sensitive caretaker details â†’</span>
+                  <span>Log into Admin Security Vault to edit sensitive caretaker details </span>
                 </button>
               </div>
             ) : (

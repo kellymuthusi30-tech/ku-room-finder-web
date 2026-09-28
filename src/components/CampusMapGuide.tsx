@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { 
-  MapPin, 
-  Footprints, 
-  Bike, 
-  Bus, 
-  ShieldCheck, 
-  Info, 
-  Compass, 
+import {
+  MapPin,
+  Footprints,
+  Bike,
+  Bus,
+  ShieldCheck,
+  Info,
+  Compass,
   Check,
   Clock,
   Sparkles,
@@ -127,7 +127,7 @@ export const CampusMapGuide: React.FC = () => {
             <g transform="translate(410, 140)">
               <rect x="-85" y="-28" width="170" height="56" rx="12" fill="#FFFFFF" stroke="#2563EB" strokeWidth="2" filter="drop-shadow(0px 4px 6px rgba(0,0,0,0.06))" />
               <circle cx="-60" cy="0" r="14" fill="#E8F4EE" />
-              <text x="-60" y="4" textAnchor="middle" fontSize="11">ðŸ“š</text>
+              <text x="-60" y="4" textAnchor="middle" fontSize="11"></text>
               <text x="14" y="-4" fill="#1D4ED8" fontSize="11" fontWeight="800" textAnchor="middle">
                 KU Postmodern Library
               </text>
@@ -159,8 +159,8 @@ export const CampusMapGuide: React.FC = () => {
             </g>
 
             {/* GATE 1: KM Gate (Busiest) */}
-            <g 
-              transform="translate(260, 275)" 
+            <g
+              transform="translate(260, 275)"
               className="cursor-pointer group"
               onClick={() => setSelectedGate('KM Gate')}
             >
@@ -178,8 +178,8 @@ export const CampusMapGuide: React.FC = () => {
             </g>
 
             {/* GATE 2: Nyayo Gate */}
-            <g 
-              transform="translate(130, 180)" 
+            <g
+              transform="translate(130, 180)"
               className="cursor-pointer group"
               onClick={() => setSelectedGate('Nyayo Gate')}
             >
@@ -197,8 +197,8 @@ export const CampusMapGuide: React.FC = () => {
             </g>
 
             {/* GATE 3: Main Gate */}
-            <g 
-              transform="translate(580, 275)" 
+            <g
+              transform="translate(580, 275)"
               className="cursor-pointer group"
               onClick={() => setSelectedGate('Main Gate')}
             >
@@ -223,7 +223,7 @@ export const CampusMapGuide: React.FC = () => {
                 KM / Kahawa Sukari Hub
               </text>
               <text x="0" y="12" fill="#B45309" fontSize="9" fontWeight="semibold" textAnchor="middle">
-                ðŸš¶ 3-5 min walk across KM Footbridge
+                 3-5 min walk across KM Footbridge
               </text>
             </g>
 
@@ -234,7 +234,7 @@ export const CampusMapGuide: React.FC = () => {
                 Kahawa Wendani
               </text>
               <text x="0" y="12" fill="#B45309" fontSize="9" fontWeight="semibold" textAnchor="middle">
-                ðŸ›’ QuickMart (8-10 min)
+                 QuickMart (8-10 min)
               </text>
             </g>
 
@@ -245,7 +245,7 @@ export const CampusMapGuide: React.FC = () => {
                 Ruiru / Toll
               </text>
               <text x="0" y="12" fill="#B45309" fontSize="9" fontWeight="semibold" textAnchor="middle">
-                ðŸ›µ 5 min Boda (KES 50)
+                 5 min Boda (KES 50)
               </text>
             </g>
           </svg>
@@ -266,7 +266,7 @@ export const CampusMapGuide: React.FC = () => {
 
             <div className="flex items-center gap-2">
               <span className="text-xs font-bold text-slate-700 bg-white border border-slate-200 px-3 py-1 rounded-xl">
-                ðŸš¶ {gateInfo.walkingTimeFromLibrary} walk to Library
+                 {gateInfo.walkingTimeFromLibrary} walk to Library
               </span>
               <span className="text-xs font-bold text-blue-800 bg-blue-100 px-3 py-1 rounded-xl">
                 Open 5:30 AM - 11:00 PM

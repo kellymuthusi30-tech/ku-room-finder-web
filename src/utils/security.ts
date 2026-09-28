@@ -31,58 +31,58 @@ export function maskCaretakerPhone(phone?: string, isAdmin: boolean = false): st
   if (isAdmin && phone) return phone;
   if (!phone) return 'AGENCY RESTRICTED';
   const cleaned = phone.trim();
-  if (cleaned.length < 8) return 'â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢';
+  if (cleaned.length < 8) return '';
   const prefix = cleaned.substring(0, 7);
   const suffix = cleaned.substring(cleaned.length - 2);
-  return `${prefix} â€¢â€¢â€¢ â€¢${suffix} (Admin Vault Locked)`;
+  return `${prefix}  ${suffix} (Admin Vault Locked)`;
 }
 
 /**
  * Mask student personal phone numbers to prevent scrapers & unsolicited contact.
- * Format: +254 7â€¢â€¢ â€¢â€¢â€¢ 390
+ * Format: +254 7  390
  */
 export function maskPhoneNumber(phone: string, isAdmin: boolean = false): string {
   if (isAdmin || !phone) return phone;
   const cleaned = phone.trim();
-  if (cleaned.length < 8) return 'â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢';
+  if (cleaned.length < 8) return '';
   const prefix = cleaned.substring(0, 7);
   const suffix = cleaned.substring(cleaned.length - 3);
-  return `${prefix} â€¢â€¢â€¢ â€¢${suffix}`;
+  return `${prefix}  ${suffix}`;
 }
 
 /**
  * Mask Kenyatta University student registration numbers.
- * Format: E37/â€¢â€¢â€¢â€¢/2023
+ * Format: E37//2023
  */
 export function maskRegNumber(regNo: string, isAdmin: boolean = false): string {
   if (isAdmin || !regNo) return regNo;
   const parts = regNo.split('/');
   if (parts.length === 3) {
-    return `${parts[0]}/â€¢â€¢â€¢â€¢/${parts[2]}`;
+    return `${parts[0]}//${parts[2]}`;
   }
-  return `${regNo.substring(0, 3)}â€¢â€¢â€¢â€¢`;
+  return `${regNo.substring(0, 3)}`;
 }
 
 /**
  * Mask sensitive M-Pesa transaction reference codes.
- * Format: QJ84â€¢â€¢â€¢â€¢KU
+ * Format: QJ84KU
  */
 export function maskMpesaCode(code: string, isAdmin: boolean = false): string {
   if (isAdmin || !code) return code;
-  if (code.length <= 6) return 'â€¢â€¢â€¢â€¢â€¢â€¢';
+  if (code.length <= 6) return '';
   const prefix = code.substring(0, 4);
   const suffix = code.substring(code.length - 2);
-  return `${prefix}â€¢â€¢â€¢â€¢${suffix}`;
+  return `${prefix}${suffix}`;
 }
 
 /**
  * Mask Caretaker / Landlord National ID.
- * Format: â€¢â€¢â€¢â€¢â€¢â€¢45
+ * Format: 45
  */
 export function maskNationalId(idNumber?: string, isAdmin: boolean = false): string {
   if (isAdmin && idNumber) return idNumber;
   if (!idNumber) return 'RESTRICTED (ADMIN ONLY)';
-  return `â€¢â€¢â€¢â€¢â€¢â€¢${idNumber.slice(-3)}`;
+  return `${idNumber.slice(-3)}`;
 }
 
 /**
@@ -91,7 +91,7 @@ export function maskNationalId(idNumber?: string, isAdmin: boolean = false): str
 export function maskPayoutAccount(payout?: string, isAdmin: boolean = false): string {
   if (isAdmin && payout) return payout;
   if (!payout) return 'RESTRICTED (ADMIN ONLY)';
-  return `M-PESA (${payout.slice(0, 4)}â€¢â€¢â€¢â€¢${payout.slice(-2)})`;
+  return `M-PESA (${payout.slice(0, 4)}${payout.slice(-2)})`;
 }
 
 /**
@@ -100,7 +100,7 @@ export function maskPayoutAccount(payout?: string, isAdmin: boolean = false): st
  */
 export function formatDiscreetCurrency(amount: number, isDiscreetMode: boolean = false): string {
   if (isDiscreetMode) {
-    return 'KES â€¢â€¢â€¢â€¢â€¢';
+    return 'KES ';
   }
   return `KES ${amount.toLocaleString()}`;
 }

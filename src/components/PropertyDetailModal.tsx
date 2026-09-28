@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import { 
-  X, 
-  MapPin, 
-  Footprints, 
-  Phone, 
-  MessageCircle, 
-  ShieldCheck, 
-  Check, 
-  Calendar, 
-  Clock, 
-  CreditCard, 
-  User, 
-  Sparkles, 
-  ChevronLeft, 
+import {
+  X,
+  MapPin,
+  Footprints,
+  Phone,
+  MessageCircle,
+  ShieldCheck,
+  Check,
+  Calendar,
+  Clock,
+  CreditCard,
+  User,
+  Sparkles,
+  ChevronLeft,
   ChevronRight,
   AlertCircle,
   Eye,
@@ -28,13 +28,13 @@ import {
 import confetti from 'canvas-confetti';
 import { Property, Booking, HouseHuntingPayment } from '../types';
 import { RoomHotspot } from '../data/mockData';
-import { 
+import {
   buildWhatsAppUrl,
-  maskNationalId, 
-  maskPayoutAccount, 
-  maskCaretakerPhone, 
+  maskNationalId,
+  maskPayoutAccount,
+  maskCaretakerPhone,
   formatDiscreetCurrency,
-  maskRegNumber 
+  maskRegNumber
 } from '../utils/security';
 
 interface PropertyDetailModalProps {
@@ -125,7 +125,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
 
       setIsSubmitting(false);
       onAddBooking(newBooking);
-      setBookingSuccess(`100% Free Physical Viewing Scheduled! Clearance Pass ID: ${passCode}. An accredited KU Room Finders field guide will meet you at ${property.nearestGate}. Physical inspection is 100% FREE â€” payment only happens after viewing if you decide to take the room!`);
+      setBookingSuccess(`100% Free Physical Viewing Scheduled! Clearance Pass ID: ${passCode}. An accredited KU Room Finders field guide will meet you at ${property.nearestGate}. Physical inspection is 100% FREE  payment only happens after viewing if you decide to take the room!`);
     }, 500);
   };
 
@@ -142,7 +142,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
           <div>
             <span className="text-xs font-bold text-[#2563EB] flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-[#2563EB]" />
-              Verified Off-Campus Residence Â· {property.neighborhood}
+              Verified Off-Campus Residence  {property.neighborhood}
             </span>
             <h2 className="font-display font-black text-lg sm:text-xl text-slate-900 mt-0.5 truncate max-w-md sm:max-w-xl">
               {property.title}
@@ -285,7 +285,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
                       onClick={() => setActiveHotspot(null)}
                       className="text-slate-400 hover:text-slate-600 text-xs font-bold cursor-pointer"
                     >
-                      âœ•
+
                     </button>
                   </div>
                   <p className="text-xs text-slate-600 mt-1 leading-relaxed">
@@ -444,7 +444,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
                   }}
                   className="text-blue-400 hover:underline font-bold cursor-pointer"
                 >
-                  Admin Verification Portal â†’
+                  Admin Verification Portal
                 </button>
               </div>
             )}
@@ -499,7 +499,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
                   <ShieldCheck className="w-5 h-5 text-[#2563EB] shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold text-slate-900 block text-xs">
-                      Free Comrade Inspection Policy Â· Zero Shillings Charged Now
+                      Free Comrade Inspection Policy  Zero Shillings Charged Now
                     </span>
                     <span className="text-slate-600 text-[11px] leading-relaxed block mt-0.5">
                       An accredited KU Room Finders guide will meet you at {property.nearestGate} to escort you into {property.title}. Inspect water, Wi-Fi, electricity meter, and security completely free. <strong>You only pay after viewing</strong> if you decide to take the room!

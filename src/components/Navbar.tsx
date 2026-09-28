@@ -1,11 +1,11 @@
 import React from 'react';
-import { 
-  Home, 
-  Users, 
-  Map, 
-  PlusCircle, 
-  BookmarkCheck, 
-  ShieldCheck, 
+import {
+  Home,
+  Users,
+  Map,
+  PlusCircle,
+  BookmarkCheck,
+  ShieldCheck,
   GraduationCap,
   Sparkles,
   Shield,
@@ -48,24 +48,24 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/90 transition-all shadow-xs">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-3 sm:gap-4">
+      <div className="max-w-7xl mx-auto w-full min-w-0 px-3 sm:px-6 lg:px-8 min-h-18 py-2 sm:py-0 flex items-center justify-between gap-2 sm:gap-4">
         {/* Zone 1: Brand Wordmark */}
-        <div 
+        <div
           onClick={() => setActiveTab('properties')}
-          className="flex items-center gap-3 cursor-pointer select-none group shrink-0"
+          className="flex min-w-0 items-center gap-2 sm:gap-3 cursor-pointer select-none group"
         >
           <div className="relative">
             <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#1D4ED8] via-[#2563EB] to-[#172554] flex items-center justify-center text-white shadow-md shadow-blue-900/15 group-hover:scale-105 transition-transform duration-200">
               <GraduationCap className="w-6 h-6 text-[#F59E0B]" />
             </div>
             <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-[#F59E0B] border-2 border-white flex items-center justify-center text-[8px] font-black text-slate-900">
-              âœ“
+
             </span>
           </div>
 
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 group-hover:text-[#2563EB] transition-colors">
+              <span className="font-display font-extrabold text-lg sm:text-2xl tracking-tight text-slate-900 group-hover:text-[#2563EB] transition-colors truncate max-w-[150px] sm:max-w-none">
                 KU Room Finders
               </span>
               <span className="text-[10px] font-extrabold bg-blue-50 text-[#2563EB] border border-blue-200/80 px-2 py-0.5 rounded-full uppercase tracking-wider hidden lg:inline-flex items-center gap-1 shadow-2xs">
@@ -73,8 +73,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                 100% Free Room Viewings
               </span>
             </div>
-            <span className="text-[11px] text-slate-500 font-medium block -mt-0.5">
-              Verified Student Housing Â· Pay Only After Viewing
+            <span className="text-[11px] text-slate-500 font-medium hidden sm:block -mt-0.5">
+              Verified Student Housing  Pay Only After Viewing
             </span>
           </div>
         </div>
@@ -119,7 +119,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </nav>
 
         {/* Zone 3: Actions */}
-        <div className="flex items-center gap-1.5 sm:gap-2">
+        <div className="flex min-w-0 shrink-0 items-center gap-1 sm:gap-2">
           <button
             onClick={onOpenContactAdmin}
             className="px-2.5 sm:px-3 py-2 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-extrabold flex items-center gap-1.5 transition-all shadow-2xs shrink-0 cursor-pointer"
@@ -132,7 +132,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Discreet Mode Toggle Button */}
           <button
             onClick={onToggleDiscreetMode}
-            className={`px-2.5 sm:px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all shadow-2xs border cursor-pointer ${
+            className={`hidden sm:flex px-2.5 sm:px-3 py-2 rounded-xl text-xs font-bold items-center gap-1.5 transition-all shadow-2xs border cursor-pointer ${
               isDiscreetMode
                 ? 'bg-amber-100 border-amber-300 text-amber-900 shadow-amber-200/50'
                 : 'bg-slate-100 hover:bg-slate-200 border-slate-200 text-slate-700'
@@ -168,7 +168,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* House Listing Job / List House Button */}
           <button
             onClick={onOpenListProperty}
-            className="px-2.5 sm:px-3 py-2 rounded-xl bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-900 text-xs font-extrabold flex items-center gap-1.5 transition-all shadow-2xs shrink-0 cursor-pointer"
+            className="hidden sm:flex px-2.5 sm:px-3 py-2 rounded-xl bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-900 text-xs font-extrabold items-center gap-1.5 transition-all shadow-2xs shrink-0 cursor-pointer"
             title="House Listing Job: Scout Vacant Rooms & Earn KES 500-1,500 Bounty / List or Edit Houses"
           >
             <Briefcase className="w-3.5 h-3.5 text-amber-700" />
@@ -181,7 +181,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Admin Vault Action Button */}
           <button
             onClick={onOpenAdminPanel}
-            className={`px-2.5 sm:px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all shadow-xs shrink-0 cursor-pointer ${
+            className={`hidden sm:flex px-2.5 sm:px-3 py-2 rounded-xl text-xs font-bold items-center gap-1.5 transition-all shadow-xs shrink-0 cursor-pointer ${
               isAdmin
                 ? 'bg-blue-900 text-blue-200 border border-blue-700'
                 : 'bg-slate-900 hover:bg-slate-800 text-white'

@@ -1,29 +1,29 @@
-export type RoomType = 
-  | 'bedsit' 
-  | 'single' 
-  | 'one_bedroom' 
-  | 'hostel_shared' 
+export type RoomType =
+  | 'bedsit'
+  | 'single'
+  | 'one_bedroom'
+  | 'hostel_shared'
   | 'executive_studio';
 
-export type Neighborhood = 
-  | 'KM Gate' 
-  | 'Kahawa Wendani' 
-  | 'Kahawa Sukari' 
-  | 'Ruiru' 
-  | 'Bypass' 
+export type Neighborhood =
+  | 'KM Gate'
+  | 'Kahawa Wendani'
+  | 'Kahawa Sukari'
+  | 'Ruiru'
+  | 'Bypass'
   | 'Roysambu';
 
-export type CampusGate = 
-  | 'KM Gate' 
-  | 'Nyayo Gate' 
-  | 'Main Gate' 
+export type CampusGate =
+  | 'KM Gate'
+  | 'Nyayo Gate'
+  | 'Main Gate'
   | 'Eastern Bypass Gate';
 
-export type HouseHuntingTier = 
-  | 'free_viewing' 
-  | 'holding_deposit' 
+export type HouseHuntingTier =
+  | 'free_viewing'
+  | 'holding_deposit'
   | 'post_viewing_placement'
-  | 'tour_pass' 
+  | 'tour_pass'
   | 'full_placement';
 
 export interface Property {

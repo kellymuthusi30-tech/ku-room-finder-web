@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { 
-  X, 
-  Building2, 
-  MapPin, 
-  DollarSign, 
-  Phone, 
-  Check, 
-  Sparkles, 
-  Lock, 
-  ShieldCheck, 
-  Coins, 
-  Briefcase, 
-  UserCheck, 
+import {
+  X,
+  Building2,
+  MapPin,
+  DollarSign,
+  Phone,
+  Check,
+  Sparkles,
+  Lock,
+  ShieldCheck,
+  Coins,
+  Briefcase,
+  UserCheck,
   Award,
   AlertCircle,
   Edit,
@@ -161,7 +161,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
 
     if (isScout) {
       setSubmissionSuccess(
-        `ðŸŽ‰ House Listing Job Submitted! Your scout entry for "${newProp.title}" is queued for Admin verification. Once our Super Admin calls the caretaker and approves the room, your bounty of KES ${currentBounty.toLocaleString()} will be sent to ${scoutPhone}.`
+        ` House Listing Job Submitted! Your scout entry for "${newProp.title}" is queued for Admin verification. Once our Super Admin calls the caretaker and approves the room, your bounty of KES ${currentBounty.toLocaleString()} will be sent to ${scoutPhone}.`
       );
     } else {
       setSubmissionSuccess(
@@ -201,7 +201,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
                 </span>
               </div>
               <p className="text-xs text-slate-500">
-                KU Student Scout Job Â· List Vacant Rooms or Manage Existing Listings
+                KU Student Scout Job  List Vacant Rooms or Manage Existing Listings
               </p>
             </div>
           </div>
@@ -342,9 +342,9 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
                       </div>
                       <div className="text-[11px] text-slate-500 flex items-center gap-2 mt-0.5">
                         <span className="font-semibold text-[#2563EB]">{prop.neighborhood}</span>
-                        <span>Â·</span>
+                        <span></span>
                         <span>KES {prop.price.toLocaleString()}/mo</span>
-                        <span>Â·</span>
+                        <span></span>
                         <span className="text-blue-700 font-bold">{prop.vacantRoomsCount} Vacant</span>
                       </div>
                       <span className="text-[10px] text-slate-400 block mt-0.5 flex items-center gap-1 font-mono">
@@ -521,7 +521,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 text-amber-900 font-bold">
                   <Lock className="w-4 h-4 text-amber-600" />
-                  <span>Caretaker Information (Strictly Encrypted Â· Admin Only)</span>
+                  <span>Caretaker Information (Strictly Encrypted  Admin Only)</span>
                 </div>
                 <span className="text-[9px] bg-amber-200 text-amber-950 font-black px-2 py-0.5 rounded-full uppercase">
                   Admin Vault Only

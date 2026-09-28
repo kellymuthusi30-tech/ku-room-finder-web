@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { 
-  MapPin, 
-  Footprints, 
-  Phone, 
-  MessageCircle, 
-  Star, 
-  ShieldCheck, 
-  Heart, 
-  Wifi, 
-  Droplet, 
+import {
+  MapPin,
+  Footprints,
+  Phone,
+  MessageCircle,
+  Star,
+  ShieldCheck,
+  Heart,
+  Wifi,
+  Droplet,
   Flame,
   ChevronLeft,
   ChevronRight,
@@ -154,7 +154,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
           {/* Unboxed Metadata with Typographic Separators */}
           <div className="flex items-center gap-1.5 text-xs text-slate-500 font-semibold">
             <span className="text-[#2563EB]">{property.neighborhood}</span>
-            <span aria-hidden="true">Â·</span>
+            <span aria-hidden="true"></span>
             <span className="flex items-center gap-1 text-slate-600">
               <Footprints className="w-3.5 h-3.5 text-[#D97706]" />
               {property.walkingMinutes} min walk ({property.nearestGate})

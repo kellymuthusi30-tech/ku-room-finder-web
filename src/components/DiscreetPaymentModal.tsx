@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { 
-  X, 
-  ShieldCheck, 
-  Lock, 
-  CreditCard, 
-  Check, 
-  Sparkles, 
-  MapPin, 
-  Calendar, 
-  Clock, 
-  Phone, 
-  User, 
-  Eye, 
-  EyeOff, 
-  CheckCircle2, 
+import {
+  X,
+  ShieldCheck,
+  Lock,
+  CreditCard,
+  Check,
+  Sparkles,
+  MapPin,
+  Calendar,
+  Clock,
+  Phone,
+  User,
+  Eye,
+  EyeOff,
+  CheckCircle2,
   AlertCircle,
   Smartphone,
   Ticket,
@@ -245,14 +245,14 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="font-display font-extrabold text-base sm:text-lg text-white">
-                  KU Room Finders Â· Viewing & Escrow Portal
+                  KU Room Finders  Viewing & Escrow Portal
                 </h3>
                 <span className="text-[10px] font-bold bg-[#2563EB] text-white px-2 py-0.5 rounded-full uppercase tracking-wider">
                   Pay After Viewing
                 </span>
               </div>
               <p className="text-xs text-slate-400 mt-0.5">
-                Physical Inspection is 100% Free Â· Settle Escrow Only After You Approve the Room
+                Physical Inspection is 100% Free  Settle Escrow Only After You Approve the Room
               </p>
             </div>
           </div>
@@ -330,7 +330,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                       Target Residence: {selectedProperty.title}
                     </span>
                     <span className="text-slate-600">
-                      Location: {selectedProperty.neighborhood} ({selectedProperty.walkingMinutes} min walk to {selectedProperty.nearestGate}) Â· {selectedProperty.vacantRoomsCount} vacant rooms.
+                      Location: {selectedProperty.neighborhood} ({selectedProperty.walkingMinutes} min walk to {selectedProperty.nearestGate})  {selectedProperty.vacantRoomsCount} vacant rooms.
                     </span>
                   </div>
                 </div>
@@ -610,7 +610,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                         {formatDiscreetCurrency(currentTierObj.amount, isDiscreetMode)}
                       </span>
                       <span className="text-[10px] text-blue-200 block font-normal">
-                        Till {ADMIN_CONFIG.escrowPaybill} Â· Agency Escrow
+                        Till {ADMIN_CONFIG.escrowPaybill}  Agency Escrow
                       </span>
                     </div>
                   </button>
@@ -654,7 +654,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                   </p>
                   <p className="text-slate-400 text-[11px]">Enter M-Pesa PIN:</p>
                   <div className="py-2 px-3 bg-slate-800 rounded-lg font-mono text-center tracking-widest text-blue-400 font-black">
-                    â€¢â€¢â€¢â€¢
+
                   </div>
                 </div>
 

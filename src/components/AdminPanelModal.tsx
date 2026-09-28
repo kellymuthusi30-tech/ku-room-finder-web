@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { 
-  X, 
-  ShieldCheck, 
-  Lock, 
-  Unlock, 
-  Key, 
-  Eye, 
-  EyeOff, 
-  CheckCircle2, 
-  AlertTriangle, 
-  FileText, 
-  DollarSign, 
-  Users, 
+import {
+  X,
+  ShieldCheck,
+  Lock,
+  Unlock,
+  Key,
+  Eye,
+  EyeOff,
+  CheckCircle2,
+  AlertTriangle,
+  FileText,
+  DollarSign,
+  Users,
   Building2,
   Trash2,
   Check,
@@ -87,7 +87,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="font-display font-extrabold text-lg text-white">
-                  KU Room Finders Â· Admin Security Vault
+                  KU Room Finders  Admin Security Vault
                 </h3>
                 {isAdmin ? (
                   <span className="text-[10px] bg-blue-500/20 text-blue-400 border border-blue-500/30 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider flex items-center gap-1">
@@ -101,7 +101,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                 )}
               </div>
               <p className="text-xs text-slate-400 mt-0.5">
-                Restricted Agency Portal Â· Server authentication required
+                Restricted Agency Portal  Server authentication required
               </p>
             </div>
           </div>
@@ -247,7 +247,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                               {prop.title}
                             </span>
                             <span className="text-[10px] text-slate-400">
-                              {prop.neighborhood} Â· {prop.vacantRoomsCount} Vacant
+                              {prop.neighborhood}  {prop.vacantRoomsCount} Vacant
                             </span>
                           </td>
                           <td className="p-3 font-semibold text-slate-800">
@@ -445,12 +445,12 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                             </span>
                           </div>
                           <p className="text-xs text-slate-500 mt-0.5">
-                            {prop.neighborhood} Â· KES {prop.price.toLocaleString()}/{prop.pricePeriod} Â· Caretaker: {prop.caretakerName} ({prop.caretakerPhone})
+                            {prop.neighborhood}  KES {prop.price.toLocaleString()}/{prop.pricePeriod}  Caretaker: {prop.caretakerName} ({prop.caretakerPhone})
                           </p>
                           {prop.scoutName && (
                             <span className="text-[10px] bg-amber-50 text-amber-900 border border-amber-200 px-2 py-0.5 rounded-md font-bold mt-1 inline-flex items-center gap-1">
                               <span>Scout: {prop.scoutName} ({prop.scoutRegNo})</span>
-                              <span>Â· Bounty: KES {prop.listingBountyKes?.toLocaleString() || '800'}</span>
+                              <span> Bounty: KES {prop.listingBountyKes?.toLocaleString() || '800'}</span>
                             </span>
                           )}
                         </div>
@@ -476,7 +476,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                               : 'bg-slate-200 text-slate-700'
                           }`}
                         >
-                          {prop.isVerified ? 'âœ“ Verified Badge Active' : 'Mark Verified'}
+                          {prop.isVerified ? ' Verified Badge Active' : 'Mark Verified'}
                         </button>
 
                         {prop.approvalStatus === 'pending_review' ? (
