@@ -202,7 +202,7 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
         {/* Header */}
         <div className="p-4 sm:p-5 border-b border-slate-100 flex items-center justify-between bg-white shrink-0">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-emerald-50 text-[#047857] flex items-center justify-center">
+            <div className="w-9 h-9 rounded-xl bg-blue-50 text-[#2563EB] flex items-center justify-center">
               <Building2 className="w-5 h-5" />
             </div>
             <div>
@@ -211,8 +211,8 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
                   Edit House / Listing Details
                 </h3>
                 {isAdmin ? (
-                  <span className="text-[10px] bg-emerald-100 text-emerald-800 border border-emerald-300 px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
-                    <Unlock className="w-3 h-3 text-emerald-700" />
+                  <span className="text-[10px] bg-blue-100 text-blue-800 border border-blue-300 px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
+                    <Unlock className="w-3 h-3 text-blue-700" />
                     Admin Mode: Full Caretaker Access
                   </span>
                 ) : (
@@ -357,21 +357,21 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
                 max="50"
                 value={vacantCount}
                 onChange={(e) => setVacantCount(e.target.value)}
-                className="w-full px-2 py-2 bg-slate-50 border border-slate-200 rounded-xl font-mono font-bold text-emerald-700"
+                className="w-full px-2 py-2 bg-slate-50 border border-slate-200 rounded-xl font-mono font-bold text-blue-700"
               />
             </div>
           </div>
 
           {/* SENSITIVE CARETAKER CREDENTIALS SECTION */}
           <div className={`p-4 rounded-2xl border transition-all ${
-            isAdmin ? 'bg-emerald-50/70 border-emerald-300' : 'bg-amber-50/70 border-amber-200'
+            isAdmin ? 'bg-blue-50/70 border-blue-300' : 'bg-amber-50/70 border-amber-200'
           }`}>
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-1.5 font-bold text-xs">
                 {isAdmin ? (
                   <>
-                    <Unlock className="w-4 h-4 text-emerald-700" />
-                    <span className="text-emerald-950">Caretaker & Landlord Credentials (Admin Unmasked)</span>
+                    <Unlock className="w-4 h-4 text-blue-700" />
+                    <span className="text-blue-950">Caretaker & Landlord Credentials (Admin Unmasked)</span>
                   </>
                 ) : (
                   <>
@@ -381,7 +381,7 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
                 )}
               </div>
               <span className={`text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider ${
-                isAdmin ? 'bg-emerald-200 text-emerald-900' : 'bg-amber-200 text-amber-900'
+                isAdmin ? 'bg-blue-200 text-blue-900' : 'bg-amber-200 text-amber-900'
               }`}>
                 {isAdmin ? 'Admin Editable' : 'Vault Locked'}
               </span>
@@ -434,16 +434,16 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
                     onClose();
                     onOpenAdminPanel();
                   }}
-                  className="text-[11px] font-bold text-[#047857] hover:underline flex items-center gap-1 cursor-pointer"
+                  className="text-[11px] font-bold text-[#2563EB] hover:underline flex items-center gap-1 cursor-pointer"
                 >
                   <Key className="w-3.5 h-3.5" />
-                  <span>Log into Admin Security Vault to edit sensitive caretaker details →</span>
+                  <span>Log into Admin Security Vault to edit sensitive caretaker details â†’</span>
                 </button>
               </div>
             ) : (
               /* Admin Unmasked Editable View */
               <div className="space-y-3">
-                <p className="text-[11px] text-emerald-800">
+                <p className="text-[11px] text-blue-800">
                   You are authenticated as Super Administrator. You have full clearance to edit caretaker contacts and payout destinations.
                 </p>
 
@@ -455,7 +455,7 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
                       value={caretakerName}
                       onChange={(e) => setCaretakerName(e.target.value)}
                       placeholder="e.g. Mr. James Maina"
-                      className="w-full px-3 py-1.5 bg-white border border-emerald-300 rounded-xl text-slate-800 font-semibold"
+                      className="w-full px-3 py-1.5 bg-white border border-blue-300 rounded-xl text-slate-800 font-semibold"
                     />
                   </div>
 
@@ -466,7 +466,7 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
                       value={caretakerPhone}
                       onChange={(e) => setCaretakerPhone(e.target.value)}
                       placeholder="+254 722 000 000"
-                      className="w-full px-3 py-1.5 bg-white border border-emerald-300 rounded-xl font-mono text-emerald-800 font-bold"
+                      className="w-full px-3 py-1.5 bg-white border border-blue-300 rounded-xl font-mono text-blue-800 font-bold"
                     />
                   </div>
 
@@ -477,7 +477,7 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
                       value={caretakerNationalId}
                       onChange={(e) => setCaretakerNationalId(e.target.value)}
                       placeholder="e.g. 28941072"
-                      className="w-full px-3 py-1.5 bg-white border border-emerald-300 rounded-xl font-mono text-slate-800"
+                      className="w-full px-3 py-1.5 bg-white border border-blue-300 rounded-xl font-mono text-slate-800"
                     />
                   </div>
 
@@ -488,7 +488,7 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
                       value={landlordPayoutMpesa}
                       onChange={(e) => setLandlordPayoutMpesa(e.target.value)}
                       placeholder="0722123456"
-                      className="w-full px-3 py-1.5 bg-white border border-emerald-300 rounded-xl font-mono text-slate-800"
+                      className="w-full px-3 py-1.5 bg-white border border-blue-300 rounded-xl font-mono text-slate-800"
                     />
                   </div>
                 </div>
@@ -500,7 +500,7 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
           {isAdmin && (
             <div className="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 space-y-2.5">
               <span className="font-bold text-slate-900 block flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                <ShieldCheck className="w-4 h-4 text-blue-600" />
                 <span>Admin Governance & Visibility</span>
               </span>
 
@@ -524,7 +524,7 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
                     id="edit-is-verified"
                     checked={isVerified}
                     onChange={(e) => setIsVerified(e.target.checked)}
-                    className="w-4 h-4 rounded text-[#047857] focus:ring-[#047857]"
+                    className="w-4 h-4 rounded text-[#2563EB] focus:ring-[#2563EB]"
                   />
                   <label htmlFor="edit-is-verified" className="font-bold text-slate-800 cursor-pointer">
                     Verified Badge (Escrow Protected)
@@ -552,7 +552,7 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
               <label className="block font-bold text-slate-700">Property Photos</label>
               <span className="text-[10px] font-semibold text-slate-400">{images.length}/6 photos</span>
             </div>
-            <label className="flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-dashed border-emerald-300 bg-emerald-50 px-3 py-3 text-xs font-bold text-[#047857] hover:bg-emerald-100">
+            <label className="flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-dashed border-blue-300 bg-blue-50 px-3 py-3 text-xs font-bold text-[#2563EB] hover:bg-blue-100">
               <ImagePlus className="h-4 w-4" />
               <span>Choose photos from gallery</span>
               <input type="file" accept="image/*" multiple onChange={handleGalleryChange} className="sr-only" />
@@ -601,7 +601,7 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
                   key={idx}
                   onClick={() => item.set(!item.state)}
                   className={`p-2 rounded-xl border cursor-pointer flex items-center justify-between transition-all ${
-                    item.state ? 'border-[#047857] bg-emerald-50 text-[#047857]' : 'border-slate-200 bg-white text-slate-600'
+                    item.state ? 'border-[#2563EB] bg-blue-50 text-[#2563EB]' : 'border-slate-200 bg-white text-slate-600'
                   }`}
                 >
                   <span className="font-semibold text-[11px]">{item.label}</span>
@@ -634,7 +634,7 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
             </button>
             <button
               type="submit"
-              className="py-2.5 px-6 rounded-xl bg-[#047857] hover:bg-[#065F46] text-white font-display font-bold flex items-center gap-1.5 shadow-md transition-all active:scale-98 cursor-pointer"
+              className="py-2.5 px-6 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-display font-bold flex items-center gap-1.5 shadow-md transition-all active:scale-98 cursor-pointer"
             >
               <Save className="w-4 h-4" />
               <span>Save & Update Listing</span>

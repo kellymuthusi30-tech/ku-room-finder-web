@@ -163,7 +163,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
         particleCount: 110,
         spread: 70,
         origin: { y: 0.6 },
-        colors: ['#047857', '#F59E0B', '#10B981'],
+        colors: ['#2563EB', '#F59E0B', '#60A5FA'],
       });
     } catch {}
 
@@ -224,7 +224,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
         particleCount: 130,
         spread: 85,
         origin: { y: 0.6 },
-        colors: ['#047857', '#F59E0B', '#10B981', '#059669'],
+        colors: ['#2563EB', '#F59E0B', '#60A5FA', '#059669'],
       });
     } catch {}
 
@@ -239,20 +239,20 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
         {/* Modal Header */}
         <div className="p-4 sm:p-5 border-b border-slate-100 bg-slate-900 text-white flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#047857] flex items-center justify-center text-white shadow-md shadow-emerald-950/40">
+            <div className="w-10 h-10 rounded-2xl bg-[#2563EB] flex items-center justify-center text-white shadow-md shadow-blue-950/40">
               <ShieldCheck className="w-5 h-5 text-[#F59E0B]" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="font-display font-extrabold text-base sm:text-lg text-white">
-                  KU Room Finders · Viewing & Escrow Portal
+                  KU Room Finders Â· Viewing & Escrow Portal
                 </h3>
-                <span className="text-[10px] font-bold bg-[#047857] text-white px-2 py-0.5 rounded-full uppercase tracking-wider">
+                <span className="text-[10px] font-bold bg-[#2563EB] text-white px-2 py-0.5 rounded-full uppercase tracking-wider">
                   Pay After Viewing
                 </span>
               </div>
               <p className="text-xs text-slate-400 mt-0.5">
-                Physical Inspection is 100% Free · Settle Escrow Only After You Approve the Room
+                Physical Inspection is 100% Free Â· Settle Escrow Only After You Approve the Room
               </p>
             </div>
           </div>
@@ -288,7 +288,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
               onClick={() => setActiveModalTab('free_viewing')}
               className={`py-2.5 px-3 rounded-2xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
                 activeModalTab === 'free_viewing'
-                  ? 'bg-[#047857] text-white shadow-sm'
+                  ? 'bg-[#2563EB] text-white shadow-sm'
                   : 'text-slate-600 hover:text-slate-900 bg-white/60 hover:bg-white'
               }`}
             >
@@ -304,13 +304,13 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
               onClick={() => setActiveModalTab('pay_after_viewing')}
               className={`py-2.5 px-3 rounded-2xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
                 activeModalTab === 'pay_after_viewing'
-                  ? 'bg-[#047857] text-white shadow-sm'
+                  ? 'bg-[#2563EB] text-white shadow-sm'
                   : 'text-slate-600 hover:text-slate-900 bg-white/60 hover:bg-white'
               }`}
             >
               <CreditCard className="w-4 h-4 text-[#F59E0B]" />
               <span className="truncate">2. Pay After Viewing (Reserve Unit)</span>
-              <span className="text-[10px] bg-emerald-900/30 text-emerald-100 border border-emerald-500/30 px-1.5 py-0.2 rounded-md font-black shrink-0">
+              <span className="text-[10px] bg-blue-900/30 text-blue-100 border border-blue-500/30 px-1.5 py-0.2 rounded-md font-black shrink-0">
                 Escrow
               </span>
             </button>
@@ -323,14 +323,14 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
             <>
               {/* Context Banner if paying for a specific property */}
               {selectedProperty && (
-                <div className="p-3.5 bg-emerald-50 rounded-2xl border border-emerald-200/90 flex items-start gap-3 text-xs text-emerald-950">
-                  <Sparkles className="w-4 h-4 text-[#047857] shrink-0 mt-0.5" />
+                <div className="p-3.5 bg-blue-50 rounded-2xl border border-blue-200/90 flex items-start gap-3 text-xs text-blue-950">
+                  <Sparkles className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold text-slate-900 block">
                       Target Residence: {selectedProperty.title}
                     </span>
                     <span className="text-slate-600">
-                      Location: {selectedProperty.neighborhood} ({selectedProperty.walkingMinutes} min walk to {selectedProperty.nearestGate}) · {selectedProperty.vacantRoomsCount} vacant rooms.
+                      Location: {selectedProperty.neighborhood} ({selectedProperty.walkingMinutes} min walk to {selectedProperty.nearestGate}) Â· {selectedProperty.vacantRoomsCount} vacant rooms.
                     </span>
                   </div>
                 </div>
@@ -340,9 +340,9 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
               {activeModalTab === 'free_viewing' ? (
                 <form onSubmit={handleScheduleFreeViewing} className="space-y-6">
                   {/* Free Viewing Explainer Banner */}
-                  <div className="p-4 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-200 space-y-2">
-                    <div className="flex items-center gap-2 font-display font-extrabold text-sm text-[#047857]">
-                      <CheckCircle2 className="w-4 h-4 text-[#047857]" />
+                  <div className="p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl border border-blue-200 space-y-2">
+                    <div className="flex items-center gap-2 font-display font-extrabold text-sm text-[#2563EB]">
+                      <CheckCircle2 className="w-4 h-4 text-[#2563EB]" />
                       <span>Comrade Free Inspection Guarantee (KES 0 Upfront)</span>
                     </div>
                     <p className="text-xs text-slate-600 leading-relaxed font-normal">
@@ -372,7 +372,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                             required
                             value={studentName}
                             onChange={(e) => setStudentName(e.target.value)}
-                            className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-slate-800 focus:outline-none focus:border-[#047857]"
+                            className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-slate-800 focus:outline-none focus:border-[#2563EB]"
                           />
                         </div>
                       </div>
@@ -380,7 +380,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                       <div>
                         <label className="block text-[11px] font-bold text-slate-700 mb-1 flex items-center justify-between">
                           <span>KU Registration Number</span>
-                          <span className="text-[10px] text-emerald-700 font-semibold flex items-center gap-0.5">
+                          <span className="text-[10px] text-blue-700 font-semibold flex items-center gap-0.5">
                             <Lock className="w-2.5 h-2.5" /> Admin-Restricted
                           </span>
                         </label>
@@ -390,7 +390,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                           value={studentRegNo}
                           onChange={(e) => setStudentRegNo(e.target.value)}
                           placeholder="e.g. E37/4820/2023"
-                          className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-slate-800 focus:outline-none focus:border-[#047857]"
+                          className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-slate-800 focus:outline-none focus:border-[#2563EB]"
                         />
                       </div>
                     </div>
@@ -408,7 +408,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                             value={studentPhone}
                             onChange={(e) => setStudentPhone(e.target.value)}
                             placeholder="0712345678"
-                            className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-mono font-medium text-slate-800 focus:outline-none focus:border-[#047857]"
+                            className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-mono font-medium text-slate-800 focus:outline-none focus:border-[#2563EB]"
                           />
                         </div>
                       </div>
@@ -420,7 +420,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                         <select
                           value={pickupGate}
                           onChange={(e) => setPickupGate(e.target.value as CampusGate)}
-                          className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-slate-800 focus:outline-none focus:border-[#047857]"
+                          className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-slate-800 focus:outline-none focus:border-[#2563EB]"
                         >
                           <option value="KM Gate">KM Gate (Main Pedestrian)</option>
                           <option value="Nyayo Gate">Nyayo Hostels Gate</option>
@@ -436,7 +436,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                         <select
                           value={preferredTime}
                           onChange={(e) => setPreferredTime(e.target.value)}
-                          className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-slate-800 focus:outline-none focus:border-[#047857]"
+                          className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-slate-800 focus:outline-none focus:border-[#2563EB]"
                         >
                           <option value="Morning (10:00 AM)">Morning (10:00 AM)</option>
                           <option value="Midday (1:00 PM)">Midday (1:00 PM)</option>
@@ -450,7 +450,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                   {/* Free Viewing Instant Pass CTA */}
                   <button
                     type="submit"
-                    className="w-full py-4 px-5 bg-gradient-to-r from-[#047857] via-[#065F46] to-[#047857] hover:brightness-105 text-white font-display font-extrabold text-sm rounded-2xl shadow-lg shadow-emerald-950/20 flex items-center justify-between transition-all active:scale-98 cursor-pointer"
+                    className="w-full py-4 px-5 bg-gradient-to-r from-[#2563EB] via-[#1D4ED8] to-[#2563EB] hover:brightness-105 text-white font-display font-extrabold text-sm rounded-2xl shadow-lg shadow-blue-950/20 flex items-center justify-between transition-all active:scale-98 cursor-pointer"
                   >
                     <div className="flex items-center gap-2">
                       <Ticket className="w-5 h-5 text-[#F59E0B]" />
@@ -458,7 +458,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                     </div>
                     <div className="text-right">
                       <span className="text-base font-black tabular-nums">KES 0.00</span>
-                      <span className="text-[10px] text-emerald-200 block font-normal">
+                      <span className="text-[10px] text-blue-200 block font-normal">
                         Pay Only After Viewing
                       </span>
                     </div>
@@ -494,17 +494,17 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                             onClick={() => setSelectedTier(tier.id)}
                             className={`p-4 rounded-2xl border-2 transition-all cursor-pointer flex flex-col justify-between ${
                               isSelected
-                                ? 'border-[#047857] bg-emerald-50/40 shadow-sm'
+                                ? 'border-[#2563EB] bg-blue-50/40 shadow-sm'
                                 : 'border-slate-200 hover:border-slate-300 bg-white'
                             }`}
                           >
                             <div>
                               <div className="flex items-center justify-between mb-1.5">
-                                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#047857]">
+                                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#2563EB]">
                                   {tier.badge}
                                 </span>
                                 <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${
-                                  isSelected ? 'border-[#047857] bg-[#047857] text-white' : 'border-slate-300'
+                                  isSelected ? 'border-[#2563EB] bg-[#2563EB] text-white' : 'border-slate-300'
                                 }`}>
                                   {isSelected && <Check className="w-2.5 h-2.5 stroke-[3]" />}
                                 </div>
@@ -535,7 +535,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                   <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200/90 space-y-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1.5 text-xs font-bold text-slate-800">
-                        <Lock className="w-3.5 h-3.5 text-[#047857]" />
+                        <Lock className="w-3.5 h-3.5 text-[#2563EB]" />
                         <span>Discreet Statement Billing Descriptor</span>
                       </div>
                       <span className="text-[10px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full font-semibold">
@@ -551,13 +551,13 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                           onClick={() => setBillingDescriptor(desc.id)}
                           className={`p-2.5 rounded-xl text-left text-xs font-semibold transition-all border ${
                             billingDescriptor === desc.id
-                              ? 'border-[#047857] bg-white text-[#047857] shadow-xs'
+                              ? 'border-[#2563EB] bg-white text-[#2563EB] shadow-xs'
                               : 'border-slate-200 bg-white/70 text-slate-600 hover:bg-white'
                           }`}
                         >
                           <div className="flex items-center gap-2">
                             <span className={`w-3 h-3 rounded-full border flex items-center justify-center shrink-0 ${
-                              billingDescriptor === desc.id ? 'border-[#047857] bg-[#047857]' : 'border-slate-300'
+                              billingDescriptor === desc.id ? 'border-[#2563EB] bg-[#2563EB]' : 'border-slate-300'
                             }`} />
                             <span className="truncate">{desc.label}</span>
                           </div>
@@ -577,7 +577,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                         required
                         value={studentName}
                         onChange={(e) => setStudentName(e.target.value)}
-                        className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-slate-800 focus:outline-none focus:border-[#047857]"
+                        className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-slate-800 focus:outline-none focus:border-[#2563EB]"
                       />
                     </div>
 
@@ -591,7 +591,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                         value={studentPhone}
                         onChange={(e) => setStudentPhone(e.target.value)}
                         placeholder="0712345678"
-                        className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-mono font-medium text-slate-800 focus:outline-none focus:border-[#047857]"
+                        className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-mono font-medium text-slate-800 focus:outline-none focus:border-[#2563EB]"
                       />
                     </div>
                   </div>
@@ -599,7 +599,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                   {/* Submit CTA */}
                   <button
                     type="submit"
-                    className="w-full py-4 px-5 bg-gradient-to-r from-[#047857] via-[#065F46] to-[#047857] hover:brightness-105 text-white font-display font-extrabold text-sm rounded-2xl shadow-lg shadow-emerald-950/20 flex items-center justify-between transition-all active:scale-98 cursor-pointer"
+                    className="w-full py-4 px-5 bg-gradient-to-r from-[#2563EB] via-[#1D4ED8] to-[#2563EB] hover:brightness-105 text-white font-display font-extrabold text-sm rounded-2xl shadow-lg shadow-blue-950/20 flex items-center justify-between transition-all active:scale-98 cursor-pointer"
                   >
                     <div className="flex items-center gap-2">
                       <CreditCard className="w-5 h-5 text-[#F59E0B]" />
@@ -609,8 +609,8 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                       <span className="text-base font-black tabular-nums">
                         {formatDiscreetCurrency(currentTierObj.amount, isDiscreetMode)}
                       </span>
-                      <span className="text-[10px] text-emerald-200 block font-normal">
-                        Till {ADMIN_CONFIG.escrowPaybill} · Agency Escrow
+                      <span className="text-[10px] text-blue-200 block font-normal">
+                        Till {ADMIN_CONFIG.escrowPaybill} Â· Agency Escrow
                       </span>
                     </div>
                   </button>
@@ -623,14 +623,14 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
           {paymentStep === 'stk_pending' && (
             <div className="py-8 px-4 text-center max-w-md mx-auto space-y-5 animate-in fade-in zoom-in-95 duration-200">
               <div className="relative w-20 h-20 mx-auto">
-                <div className="w-20 h-20 rounded-full border-4 border-emerald-100 border-t-[#047857] animate-spin" />
+                <div className="w-20 h-20 rounded-full border-4 border-blue-100 border-t-[#2563EB] animate-spin" />
                 <div className="absolute inset-0 flex items-center justify-center font-display font-extrabold text-slate-900 text-lg tabular-nums">
                   {stkCountdown}s
                 </div>
               </div>
 
               <div>
-                <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full uppercase tracking-wider">
+                <span className="text-[11px] font-bold text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full uppercase tracking-wider">
                   Post-Viewing M-Pesa STK Push Sent
                 </span>
                 <h4 className="text-xl font-display font-black text-slate-900 mt-2">
@@ -653,8 +653,8 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                     Do you want to pay KES {currentTierObj.amount}.00 to {billingDescriptor} (Till {ADMIN_CONFIG.escrowPaybill})?
                   </p>
                   <p className="text-slate-400 text-[11px]">Enter M-Pesa PIN:</p>
-                  <div className="py-2 px-3 bg-slate-800 rounded-lg font-mono text-center tracking-widest text-emerald-400 font-black">
-                    ••••
+                  <div className="py-2 px-3 bg-slate-800 rounded-lg font-mono text-center tracking-widest text-blue-400 font-black">
+                    â€¢â€¢â€¢â€¢
                   </div>
                 </div>
 
@@ -669,7 +669,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
               </div>
 
               <p className="text-[11px] text-slate-400">
-                Did not receive prompt? <button onClick={() => setPaymentStep('form')} className="text-[#047857] font-bold underline">Change phone number</button>
+                Did not receive prompt? <button onClick={() => setPaymentStep('form')} className="text-[#2563EB] font-bold underline">Change phone number</button>
               </p>
             </div>
           )}
@@ -677,12 +677,12 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
           {/* Step 3: Clearance Voucher Generated (Both for Free Viewing and Paid Escrow) */}
           {paymentStep === 'success' && generatedPayment && (
             <div className="py-4 text-center space-y-5 animate-in fade-in zoom-in-95 duration-200">
-              <div className="w-16 h-16 rounded-3xl bg-emerald-100 text-[#047857] flex items-center justify-center mx-auto shadow-md">
+              <div className="w-16 h-16 rounded-3xl bg-blue-100 text-[#2563EB] flex items-center justify-center mx-auto shadow-md">
                 <Check className="w-8 h-8 stroke-[3]" />
               </div>
 
               <div>
-                <span className="text-[11px] font-bold text-[#047857] bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full uppercase tracking-wider">
+                <span className="text-[11px] font-bold text-[#2563EB] bg-blue-50 border border-blue-200 px-3 py-1 rounded-full uppercase tracking-wider">
                   {generatedPayment.amount === 0 ? '100% Free Viewing Pass Confirmed' : 'Post-Viewing Room Reservation Confirmed'}
                 </span>
                 <h4 className="text-2xl font-display font-black text-slate-900 mt-2">
@@ -699,7 +699,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
               <div className="p-5 bg-slate-50 rounded-3xl border border-slate-200/90 text-left space-y-4 max-w-lg mx-auto shadow-xs">
                 <div className="flex items-center justify-between border-b border-slate-200 pb-3">
                   <div>
-                    <span className="text-[10px] font-extrabold text-[#047857] uppercase tracking-wider block">
+                    <span className="text-[10px] font-extrabold text-[#2563EB] uppercase tracking-wider block">
                       Clearance Pass ID
                     </span>
                     <span className="font-mono font-black text-lg text-slate-900">
@@ -710,7 +710,7 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                     <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
                       {generatedPayment.amount === 0 ? 'Cost Upfront' : 'Escrow Ref'}
                     </span>
-                    <span className="font-mono font-bold text-xs text-emerald-700">
+                    <span className="font-mono font-bold text-xs text-blue-700">
                       {generatedPayment.amount === 0 ? '100% FREE (KES 0)' : generatedPayment.mpesaCode}
                     </span>
                   </div>
@@ -731,14 +731,14 @@ export const DiscreetPaymentModal: React.FC<DiscreetPaymentModalProps> = ({
                   </div>
                   <div>
                     <span className="text-slate-400 block text-[10px]">Payment Timing:</span>
-                    <span className="font-bold text-[#047857]">
+                    <span className="font-bold text-[#2563EB]">
                       {generatedPayment.amount === 0 ? 'Pay After Viewing if Satisfied' : 'Settled Post-Inspection'}
                     </span>
                   </div>
                 </div>
 
-                <div className="p-2.5 bg-emerald-100/50 rounded-xl border border-emerald-200 text-[11px] text-emerald-950 flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-[#047857] shrink-0" />
+                <div className="p-2.5 bg-blue-100/50 rounded-xl border border-blue-200 text-[11px] text-blue-950 flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-[#2563EB] shrink-0" />
                   <span>
                     {generatedPayment.amount === 0
                       ? `Show this pass on your phone to ${generatedPayment.escortAgentAssigned} at ${generatedPayment.pickupGate}. Inspection is 100% free!`

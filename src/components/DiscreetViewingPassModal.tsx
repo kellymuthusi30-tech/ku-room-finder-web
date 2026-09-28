@@ -73,17 +73,17 @@ export const DiscreetViewingPassModal: React.FC<DiscreetViewingPassModalProps> =
         <div className="p-6 bg-[#FCFDFD] space-y-6 text-slate-900" id="clearance-slip">
           {/* Header Watermark Block */}
           <div className="text-center pb-5 border-b-2 border-dashed border-slate-200 relative">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#047857] to-[#065F46] text-white flex items-center justify-center mx-auto shadow-md mb-2">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] text-white flex items-center justify-center mx-auto shadow-md mb-2">
               <ShieldCheck className="w-6 h-6 text-[#F59E0B]" />
             </div>
             <h2 className="font-display font-black text-xl text-slate-900 tracking-tight">
               KU ROOM FINDERS AGENCY LTD
             </h2>
-            <span className="text-[10px] uppercase tracking-widest font-extrabold text-[#047857] block">
+            <span className="text-[10px] uppercase tracking-widest font-extrabold text-[#2563EB] block">
               ACCREDITED OFF-CAMPUS HOUSING PLACEMENT BUREAU
             </span>
             <p className="text-[11px] text-slate-400 mt-1 font-mono">
-              Main Office: KM Gate Centre, 2nd Floor · P.O Box 43844-00100 Nairobi
+              Main Office: KM Gate Centre, 2nd Floor Â· P.O Box 43844-00100 Nairobi
             </p>
           </div>
 
@@ -100,8 +100,8 @@ export const DiscreetViewingPassModal: React.FC<DiscreetViewingPassModalProps> =
             <div className="text-right">
               <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider inline-flex items-center gap-1 ${
                 isFree
-                  ? 'bg-emerald-100 text-[#047857] border border-emerald-300'
-                  : 'bg-emerald-100/90 text-emerald-800 border border-emerald-300'
+                  ? 'bg-blue-100 text-[#2563EB] border border-blue-300'
+                  : 'bg-blue-100/90 text-blue-800 border border-blue-300'
               }`}>
                 <CheckCircle2 className="w-3 h-3" />
                 {isFree ? '100% Free Inspection' : 'Escrow Cleared'}
@@ -123,7 +123,7 @@ export const DiscreetViewingPassModal: React.FC<DiscreetViewingPassModalProps> =
             </div>
             <div className="flex justify-between py-1.5 border-b border-slate-100">
               <span className="text-slate-500 font-medium">Inspection Zone:</span>
-              <span className="font-bold text-[#047857]">{pass.targetNeighborhood}</span>
+              <span className="font-bold text-[#2563EB]">{pass.targetNeighborhood}</span>
             </div>
             {pass.propertyTitle && (
               <div className="flex justify-between py-1.5 border-b border-slate-100">
@@ -137,7 +137,7 @@ export const DiscreetViewingPassModal: React.FC<DiscreetViewingPassModalProps> =
             </div>
             <div className="flex justify-between py-1.5 border-b border-slate-100">
               <span className="text-slate-500 font-medium">Scheduled Viewing Slot:</span>
-              <span className="font-bold text-slate-900">{pass.scheduledDate} · {pass.scheduledTime}</span>
+              <span className="font-bold text-slate-900">{pass.scheduledDate} Â· {pass.scheduledTime}</span>
             </div>
             <div className="flex justify-between py-1.5 border-b border-slate-100">
               <span className="text-slate-500 font-medium">Assigned Escort Agent:</span>
@@ -145,7 +145,7 @@ export const DiscreetViewingPassModal: React.FC<DiscreetViewingPassModalProps> =
             </div>
             <div className="flex justify-between py-1.5 border-b border-slate-100">
               <span className="text-slate-500 font-medium">Payment Timing:</span>
-              <span className="font-bold text-[#047857]">
+              <span className="font-bold text-[#2563EB]">
                 {isFree ? 'Pay After Viewing (Zero Upfront)' : 'Paid Post-Inspection'}
               </span>
             </div>
@@ -190,7 +190,7 @@ export const DiscreetViewingPassModal: React.FC<DiscreetViewingPassModalProps> =
             </div>
           </div>
 
-          <div className="p-3.5 bg-emerald-50 rounded-xl border border-emerald-200/80 text-[11px] text-emerald-950 leading-relaxed text-center">
+          <div className="p-3.5 bg-blue-50 rounded-xl border border-blue-200/80 text-[11px] text-blue-950 leading-relaxed text-center">
             <strong>Free Viewing Guarantee:</strong> Physical viewing of the property is 100% FREE. You only pay holding escrow or placement fees after viewing and approving the unit.
           </div>
         </div>

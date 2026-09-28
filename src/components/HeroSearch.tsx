@@ -83,9 +83,9 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
         {/* Hero Content */}
         <div className="relative z-10 p-6 sm:p-10 lg:p-14 max-w-4xl text-white">
           {/* Top Pill / Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 backdrop-blur-md text-emerald-300 text-xs font-bold mb-4 border border-emerald-400/30 shadow-xs">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 backdrop-blur-md text-blue-300 text-xs font-bold mb-4 border border-blue-400/30 shadow-xs">
             <ShieldCheck className="w-4 h-4 text-[#F59E0B]" />
-            <span>100% Free Room Viewings · Pay Only After You Inspect & Approve the Room</span>
+            <span>100% Free Room Viewings Â· Pay Only After You Inspect & Approve the Room</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-display font-black text-white tracking-tight leading-tight text-balance">
@@ -93,14 +93,14 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
           </h1>
 
           <p className="text-xs sm:text-base text-slate-200 mt-3 max-w-2xl leading-relaxed font-medium">
-            Zero upfront broker fees! Schedule an escorted physical room inspection for free at KM Gate, Nyayo Gate, or Wendani. Test water, power tokens, and security first — <strong>payment happens only after viewing</strong> if you decide to take the unit.
+            Zero upfront broker fees! Schedule an escorted physical room inspection for free at KM Gate, Nyayo Gate, or Wendani. Test water, power tokens, and security first â€” <strong>payment happens only after viewing</strong> if you decide to take the unit.
           </p>
 
           {/* Business Action Strip: Free Viewing Pass & House Listing Job */}
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <button
               onClick={onOpenDiscreetPayment}
-              className="py-3 px-5 rounded-2xl bg-gradient-to-r from-[#047857] via-[#065F46] to-[#047857] hover:brightness-110 text-white font-display font-black text-xs sm:text-sm flex items-center gap-2.5 shadow-lg shadow-emerald-950/40 transition-all active:scale-95 cursor-pointer"
+              className="py-3 px-5 rounded-2xl bg-gradient-to-r from-[#2563EB] via-[#1D4ED8] to-[#2563EB] hover:brightness-110 text-white font-display font-black text-xs sm:text-sm flex items-center gap-2.5 shadow-lg shadow-blue-950/40 transition-all active:scale-95 cursor-pointer"
             >
               <Ticket className="w-4 h-4 text-[#F59E0B]" />
               <span>Get 100% Free Viewing Pass</span>
@@ -131,7 +131,7 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
               onClick={() => setSelectedRoomType(selectedRoomType === 'bedsit' ? 'all' : 'bedsit')}
               className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 backdrop-blur-md cursor-pointer ${
                 selectedRoomType === 'bedsit'
-                  ? 'bg-[#047857] text-white ring-2 ring-emerald-400'
+                  ? 'bg-[#2563EB] text-white ring-2 ring-blue-400'
                   : 'bg-white/15 text-white hover:bg-white/25 border border-white/10'
               }`}
             >
@@ -143,7 +143,7 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
               onClick={() => setSelectedRoomType(selectedRoomType === 'one_bedroom' ? 'all' : 'one_bedroom')}
               className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 backdrop-blur-md cursor-pointer ${
                 selectedRoomType === 'one_bedroom'
-                  ? 'bg-[#047857] text-white ring-2 ring-emerald-400'
+                  ? 'bg-[#2563EB] text-white ring-2 ring-blue-400'
                   : 'bg-white/15 text-white hover:bg-white/25 border border-white/10'
               }`}
             >
@@ -155,11 +155,11 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
               onClick={() => setSelectedRoomType(selectedRoomType === 'single' ? 'all' : 'single')}
               className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 backdrop-blur-md cursor-pointer ${
                 selectedRoomType === 'single'
-                  ? 'bg-[#047857] text-white ring-2 ring-emerald-400'
+                  ? 'bg-[#2563EB] text-white ring-2 ring-blue-400'
                   : 'bg-white/15 text-white hover:bg-white/25 border border-white/10'
               }`}
             >
-              <DoorClosed className="w-3.5 h-3.5 text-emerald-400" />
+              <DoorClosed className="w-3.5 h-3.5 text-blue-400" />
               <span>Single Budget Rooms</span>
             </button>
 
@@ -167,7 +167,7 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
               onClick={() => setSelectedRoomType(selectedRoomType === 'hostel_shared' ? 'all' : 'hostel_shared')}
               className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 backdrop-blur-md cursor-pointer ${
                 selectedRoomType === 'hostel_shared'
-                  ? 'bg-[#047857] text-white ring-2 ring-emerald-400'
+                  ? 'bg-[#2563EB] text-white ring-2 ring-blue-400'
                   : 'bg-white/15 text-white hover:bg-white/25 border border-white/10'
               }`}
             >
@@ -189,14 +189,14 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by building name, KM Gate, Wendani, Wi-Fi, Water..."
-              className="w-full pl-10 pr-4 py-3 bg-slate-50 hover:bg-slate-100/70 focus:bg-white text-xs sm:text-sm rounded-2xl border border-slate-200 focus:border-[#047857] focus:outline-none transition-all placeholder:text-slate-400 font-medium shadow-2xs"
+              className="w-full pl-10 pr-4 py-3 bg-slate-50 hover:bg-slate-100/70 focus:bg-white text-xs sm:text-sm rounded-2xl border border-slate-200 focus:border-[#2563EB] focus:outline-none transition-all placeholder:text-slate-400 font-medium shadow-2xs"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
                 className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-slate-700 font-bold cursor-pointer"
               >
-                ✕
+                âœ•
               </button>
             )}
           </div>
@@ -206,7 +206,7 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
             <select
               value={selectedRoomType}
               onChange={(e) => setSelectedRoomType(e.target.value as RoomType | 'all')}
-              className="w-full px-3.5 py-3 bg-slate-50 hover:bg-slate-100/70 focus:bg-white text-xs sm:text-sm rounded-2xl border border-slate-200 focus:border-[#047857] focus:outline-none transition-all text-slate-800 font-semibold shadow-2xs"
+              className="w-full px-3.5 py-3 bg-slate-50 hover:bg-slate-100/70 focus:bg-white text-xs sm:text-sm rounded-2xl border border-slate-200 focus:border-[#2563EB] focus:outline-none transition-all text-slate-800 font-semibold shadow-2xs"
             >
               <option value="all">All Room Types</option>
               <option value="bedsit">Bedsitters / Studios</option>
@@ -222,7 +222,7 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
             <select
               value={maxBudget === null ? 'all' : maxBudget.toString()}
               onChange={(e) => setMaxBudget(e.target.value === 'all' ? null : Number(e.target.value))}
-              className="w-full px-3.5 py-3 bg-slate-50 hover:bg-slate-100/70 focus:bg-white text-xs sm:text-sm rounded-2xl border border-slate-200 focus:border-[#047857] focus:outline-none transition-all text-slate-800 font-semibold shadow-2xs"
+              className="w-full px-3.5 py-3 bg-slate-50 hover:bg-slate-100/70 focus:bg-white text-xs sm:text-sm rounded-2xl border border-slate-200 focus:border-[#2563EB] focus:outline-none transition-all text-slate-800 font-semibold shadow-2xs"
             >
               <option value="all">Any Price / Budget</option>
               <option value="5000">Under KES 5,000 / mo</option>
@@ -243,14 +243,14 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
                 onClick={() => setSelectedNeighborhood(n.id)}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 cursor-pointer ${
                   selectedNeighborhood === n.id
-                    ? 'bg-[#047857] text-white shadow-xs'
+                    ? 'bg-[#2563EB] text-white shadow-xs'
                     : 'bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200/70'
                 }`}
               >
                 <span>{n.label}</span>
                 {n.badge && (
                   <span className={`text-[9px] px-1 py-0.2 rounded-md ${
-                    selectedNeighborhood === n.id ? 'bg-emerald-800 text-emerald-100' : 'bg-slate-200 text-slate-600'
+                    selectedNeighborhood === n.id ? 'bg-blue-800 text-blue-100' : 'bg-slate-200 text-slate-600'
                   }`}>
                     {n.badge}
                   </span>
@@ -269,7 +269,7 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
             }`}
           >
             <Footprints className="w-3.5 h-3.5 text-[#D97706]" />
-            <span>≤ 10 Mins Walk to Campus</span>
+            <span>â‰¤ 10 Mins Walk to Campus</span>
           </button>
         </div>
       </div>
@@ -277,19 +277,19 @@ export const HeroSearch: React.FC<HeroSearchProps> = ({
       {/* Trust Highlights Strip */}
       <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs text-slate-600 font-semibold px-2">
         <div className="flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-[#047857] shrink-0" />
+          <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0" />
           <span>100% Free Room Viewing</span>
         </div>
         <div className="flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-[#047857] shrink-0" />
+          <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0" />
           <span>Payment After Viewing Only</span>
         </div>
         <div className="flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-[#047857] shrink-0" />
+          <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0" />
           <span>Accompanied Gate Meetups</span>
         </div>
         <div className="flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-[#047857] shrink-0" />
+          <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0" />
           <span>Zero Upfront Broker Fees</span>
         </div>
       </div>

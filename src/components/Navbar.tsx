@@ -55,26 +55,26 @@ export const Navbar: React.FC<NavbarProps> = ({
           className="flex items-center gap-3 cursor-pointer select-none group shrink-0"
         >
           <div className="relative">
-            <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#065F46] via-[#047857] to-[#022c22] flex items-center justify-center text-white shadow-md shadow-emerald-900/15 group-hover:scale-105 transition-transform duration-200">
+            <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#1D4ED8] via-[#2563EB] to-[#172554] flex items-center justify-center text-white shadow-md shadow-blue-900/15 group-hover:scale-105 transition-transform duration-200">
               <GraduationCap className="w-6 h-6 text-[#F59E0B]" />
             </div>
             <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-[#F59E0B] border-2 border-white flex items-center justify-center text-[8px] font-black text-slate-900">
-              ✓
+              âœ“
             </span>
           </div>
 
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 group-hover:text-[#047857] transition-colors">
+              <span className="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 group-hover:text-[#2563EB] transition-colors">
                 KU Room Finders
               </span>
-              <span className="text-[10px] font-extrabold bg-emerald-50 text-[#047857] border border-emerald-200/80 px-2 py-0.5 rounded-full uppercase tracking-wider hidden lg:inline-flex items-center gap-1 shadow-2xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#047857] animate-pulse"></span>
+              <span className="text-[10px] font-extrabold bg-blue-50 text-[#2563EB] border border-blue-200/80 px-2 py-0.5 rounded-full uppercase tracking-wider hidden lg:inline-flex items-center gap-1 shadow-2xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] animate-pulse"></span>
                 100% Free Room Viewings
               </span>
             </div>
             <span className="text-[11px] text-slate-500 font-medium block -mt-0.5">
-              Verified Student Housing · Pay Only After Viewing
+              Verified Student Housing Â· Pay Only After Viewing
             </span>
           </div>
         </div>
@@ -89,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
             }`}
           >
-            <Home className="w-3.5 h-3.5 text-[#047857]" />
+            <Home className="w-3.5 h-3.5 text-[#2563EB]" />
             <span>Hostels & Rooms</span>
           </button>
 
@@ -122,7 +122,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex items-center gap-1.5 sm:gap-2">
           <button
             onClick={onOpenContactAdmin}
-            className="px-2.5 sm:px-3 py-2 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-extrabold flex items-center gap-1.5 transition-all shadow-2xs shrink-0 cursor-pointer"
+            className="px-2.5 sm:px-3 py-2 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-extrabold flex items-center gap-1.5 transition-all shadow-2xs shrink-0 cursor-pointer"
             title="Contact Kelly Muthusi on WhatsApp"
           >
             <MessageCircle className="w-3.5 h-3.5 fill-white" />
@@ -155,12 +155,12 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Quick 100% Free Viewing Pass Button */}
           <button
             onClick={() => onOpenDiscreetPayment('free_viewing')}
-            className="px-2.5 sm:px-3.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-[#047857] text-xs font-extrabold flex items-center gap-1.5 transition-all shadow-2xs shrink-0 cursor-pointer"
+            className="px-2.5 sm:px-3.5 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 border border-blue-300 text-[#2563EB] text-xs font-extrabold flex items-center gap-1.5 transition-all shadow-2xs shrink-0 cursor-pointer"
             title="Book 100% Free Room Viewing (Pay After Viewing)"
           >
             <Ticket className="w-3.5 h-3.5 text-[#D97706]" />
             <span className="hidden sm:inline">Free Viewing</span>
-            <span className="text-[10px] bg-[#047857] text-white px-1.5 py-0.5 rounded-md font-black uppercase">
+            <span className="text-[10px] bg-[#2563EB] text-white px-1.5 py-0.5 rounded-md font-black uppercase">
               KES 0
             </span>
           </button>
@@ -183,16 +183,16 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={onOpenAdminPanel}
             className={`px-2.5 sm:px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all shadow-xs shrink-0 cursor-pointer ${
               isAdmin
-                ? 'bg-emerald-900 text-emerald-200 border border-emerald-700'
+                ? 'bg-blue-900 text-blue-200 border border-blue-700'
                 : 'bg-slate-900 hover:bg-slate-800 text-white'
             }`}
             title="Administrator Credentials & Escrow Vault"
           >
             {isAdmin ? (
               <>
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                <ShieldCheck className="w-4 h-4 text-blue-400" />
                 <span className="hidden lg:inline">Admin Vault</span>
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
               </>
             ) : (
               <>
@@ -208,10 +208,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="relative px-2.5 sm:px-3 py-2 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1.5 transition-all shadow-xs shrink-0 cursor-pointer"
             title="My Scheduled Viewings & Passes"
           >
-            <BookmarkCheck className="w-4 h-4 text-[#047857]" />
+            <BookmarkCheck className="w-4 h-4 text-[#2563EB]" />
             <span className="hidden sm:inline">My Passes</span>
             {bookingsCount > 0 && (
-              <span className="w-5 h-5 rounded-full bg-[#047857] text-white text-[10px] font-extrabold flex items-center justify-center tabular-nums animate-pulse">
+              <span className="w-5 h-5 rounded-full bg-[#2563EB] text-white text-[10px] font-extrabold flex items-center justify-center tabular-nums animate-pulse">
                 {bookingsCount}
               </span>
             )}
@@ -224,7 +224,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <button
           onClick={() => setActiveTab('properties')}
           className={`flex items-center gap-1.5 py-1 px-3 rounded-lg font-bold transition-colors cursor-pointer ${
-            activeTab === 'properties' ? 'bg-white text-[#047857] shadow-xs' : 'text-slate-600'
+            activeTab === 'properties' ? 'bg-white text-[#2563EB] shadow-xs' : 'text-slate-600'
           }`}
         >
           <Home className="w-3.5 h-3.5" />
@@ -233,7 +233,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <button
           onClick={() => setActiveTab('roommates')}
           className={`flex items-center gap-1.5 py-1 px-3 rounded-lg font-bold transition-colors cursor-pointer ${
-            activeTab === 'roommates' ? 'bg-white text-[#047857] shadow-xs' : 'text-slate-600'
+            activeTab === 'roommates' ? 'bg-white text-[#2563EB] shadow-xs' : 'text-slate-600'
           }`}
         >
           <Users className="w-3.5 h-3.5" />
@@ -242,7 +242,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <button
           onClick={() => setActiveTab('campus-map')}
           className={`flex items-center gap-1.5 py-1 px-3 rounded-lg font-bold transition-colors cursor-pointer ${
-            activeTab === 'campus-map' ? 'bg-white text-[#047857] shadow-xs' : 'text-slate-600'
+            activeTab === 'campus-map' ? 'bg-white text-[#2563EB] shadow-xs' : 'text-slate-600'
           }`}
         >
           <Map className="w-3.5 h-3.5" />

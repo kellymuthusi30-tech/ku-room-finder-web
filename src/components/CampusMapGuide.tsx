@@ -38,7 +38,7 @@ export const CampusMapGuide: React.FC = () => {
       {/* Interactive Map Visualizer */}
       <div className="bg-white rounded-3xl border border-slate-200 p-5 sm:p-7 shadow-sm space-y-6">
         {/* Visual Campus Vector Schematic */}
-        <div className="relative h-84 sm:h-100 bg-[#E8F4EE] rounded-3xl overflow-hidden border border-emerald-200/80 shadow-inner">
+        <div className="relative h-84 sm:h-100 bg-[#E8F4EE] rounded-3xl overflow-hidden border border-blue-200/80 shadow-inner">
           <svg
             className="w-full h-full"
             viewBox="0 0 820 460"
@@ -76,7 +76,7 @@ export const CampusMapGuide: React.FC = () => {
 
             {/* KM Pedestrian Footbridge */}
             <g transform="translate(260, 310)">
-              <rect x="-24" y="-8" width="48" height="38" rx="4" fill="#047857" opacity="0.9" />
+              <rect x="-24" y="-8" width="48" height="38" rx="4" fill="#2563EB" opacity="0.9" />
               <text x="0" y="14" fill="#FFFFFF" fontSize="8" fontWeight="bold" textAnchor="middle">
                 FOOTBRIDGE
               </text>
@@ -90,12 +90,12 @@ export const CampusMapGuide: React.FC = () => {
               height="260"
               rx="28"
               fill="#D4EADF"
-              stroke="#047857"
+              stroke="#2563EB"
               strokeWidth="3.5"
             />
 
             {/* University Crest / Title */}
-            <text x="410" y="60" fill="#065F46" fontSize="15" fontWeight="900" letterSpacing="1" textAnchor="middle">
+            <text x="410" y="60" fill="#1D4ED8" fontSize="15" fontWeight="900" letterSpacing="1" textAnchor="middle">
               KENYATTA UNIVERSITY MAIN CAMPUS (6,000+ ACRES)
             </text>
 
@@ -125,10 +125,10 @@ export const CampusMapGuide: React.FC = () => {
 
             {/* Internal Landmark 1: Postmodern Library */}
             <g transform="translate(410, 140)">
-              <rect x="-85" y="-28" width="170" height="56" rx="12" fill="#FFFFFF" stroke="#047857" strokeWidth="2" filter="drop-shadow(0px 4px 6px rgba(0,0,0,0.06))" />
+              <rect x="-85" y="-28" width="170" height="56" rx="12" fill="#FFFFFF" stroke="#2563EB" strokeWidth="2" filter="drop-shadow(0px 4px 6px rgba(0,0,0,0.06))" />
               <circle cx="-60" cy="0" r="14" fill="#E8F4EE" />
-              <text x="-60" y="4" textAnchor="middle" fontSize="11">📚</text>
-              <text x="14" y="-4" fill="#065F46" fontSize="11" fontWeight="800" textAnchor="middle">
+              <text x="-60" y="4" textAnchor="middle" fontSize="11">ðŸ“š</text>
+              <text x="14" y="-4" fill="#1D4ED8" fontSize="11" fontWeight="800" textAnchor="middle">
                 KU Postmodern Library
               </text>
               <text x="14" y="12" fill="#64748B" fontSize="9" fontWeight="600" textAnchor="middle">
@@ -138,8 +138,8 @@ export const CampusMapGuide: React.FC = () => {
 
             {/* Internal Landmark 2: Nyayo Hostels Complex */}
             <g transform="translate(230, 110)">
-              <rect x="-55" y="-20" width="110" height="40" rx="10" fill="#FFFFFF" stroke="#047857" strokeWidth="1.5" />
-              <text x="0" y="-1" fill="#065F46" fontSize="10" fontWeight="bold" textAnchor="middle">
+              <rect x="-55" y="-20" width="110" height="40" rx="10" fill="#FFFFFF" stroke="#2563EB" strokeWidth="1.5" />
+              <text x="0" y="-1" fill="#1D4ED8" fontSize="10" fontWeight="bold" textAnchor="middle">
                 Nyayo Hostels
               </text>
               <text x="0" y="12" fill="#94A3B8" fontSize="8" textAnchor="middle">
@@ -149,8 +149,8 @@ export const CampusMapGuide: React.FC = () => {
 
             {/* Internal Landmark 3: Administration Block & Clock Tower */}
             <g transform="translate(590, 120)">
-              <rect x="-65" y="-20" width="130" height="40" rx="10" fill="#FFFFFF" stroke="#047857" strokeWidth="1.5" />
-              <text x="0" y="-1" fill="#065F46" fontSize="10" fontWeight="bold" textAnchor="middle">
+              <rect x="-65" y="-20" width="130" height="40" rx="10" fill="#FFFFFF" stroke="#2563EB" strokeWidth="1.5" />
+              <text x="0" y="-1" fill="#1D4ED8" fontSize="10" fontWeight="bold" textAnchor="middle">
                 KU Admin Complex
               </text>
               <text x="0" y="12" fill="#94A3B8" fontSize="8" textAnchor="middle">
@@ -167,8 +167,8 @@ export const CampusMapGuide: React.FC = () => {
               {selectedGate === 'KM Gate' && (
                 <circle r="28" fill="#F59E0B" opacity="0.3" className="animate-ping" />
               )}
-              <circle r="22" fill={selectedGate === 'KM Gate' ? '#047857' : '#FFFFFF'} stroke="#047857" strokeWidth="3" />
-              <text x="0" y="5" fill={selectedGate === 'KM Gate' ? '#FFFFFF' : '#047857'} fontSize="11" fontWeight="900" textAnchor="middle">
+              <circle r="22" fill={selectedGate === 'KM Gate' ? '#2563EB' : '#FFFFFF'} stroke="#2563EB" strokeWidth="3" />
+              <text x="0" y="5" fill={selectedGate === 'KM Gate' ? '#FFFFFF' : '#2563EB'} fontSize="11" fontWeight="900" textAnchor="middle">
                 KM
               </text>
               <rect x="-50" y="28" width="100" height="20" rx="6" fill="#0F172A" />
@@ -186,8 +186,8 @@ export const CampusMapGuide: React.FC = () => {
               {selectedGate === 'Nyayo Gate' && (
                 <circle r="24" fill="#F59E0B" opacity="0.3" className="animate-ping" />
               )}
-              <circle r="18" fill={selectedGate === 'Nyayo Gate' ? '#047857' : '#FFFFFF'} stroke="#047857" strokeWidth="3" />
-              <text x="0" y="4" fill={selectedGate === 'Nyayo Gate' ? '#FFFFFF' : '#047857'} fontSize="10" fontWeight="bold" textAnchor="middle">
+              <circle r="18" fill={selectedGate === 'Nyayo Gate' ? '#2563EB' : '#FFFFFF'} stroke="#2563EB" strokeWidth="3" />
+              <text x="0" y="4" fill={selectedGate === 'Nyayo Gate' ? '#FFFFFF' : '#2563EB'} fontSize="10" fontWeight="bold" textAnchor="middle">
                 NY
               </text>
               <rect x="-40" y="-32" width="80" height="18" rx="5" fill="#0F172A" />
@@ -205,8 +205,8 @@ export const CampusMapGuide: React.FC = () => {
               {selectedGate === 'Main Gate' && (
                 <circle r="24" fill="#F59E0B" opacity="0.3" className="animate-ping" />
               )}
-              <circle r="18" fill={selectedGate === 'Main Gate' ? '#047857' : '#FFFFFF'} stroke="#047857" strokeWidth="3" />
-              <text x="0" y="4" fill={selectedGate === 'Main Gate' ? '#FFFFFF' : '#047857'} fontSize="10" fontWeight="bold" textAnchor="middle">
+              <circle r="18" fill={selectedGate === 'Main Gate' ? '#2563EB' : '#FFFFFF'} stroke="#2563EB" strokeWidth="3" />
+              <text x="0" y="4" fill={selectedGate === 'Main Gate' ? '#FFFFFF' : '#2563EB'} fontSize="10" fontWeight="bold" textAnchor="middle">
                 MG
               </text>
               <rect x="-40" y="26" width="80" height="18" rx="5" fill="#0F172A" />
@@ -223,7 +223,7 @@ export const CampusMapGuide: React.FC = () => {
                 KM / Kahawa Sukari Hub
               </text>
               <text x="0" y="12" fill="#B45309" fontSize="9" fontWeight="semibold" textAnchor="middle">
-                🚶 3-5 min walk across KM Footbridge
+                ðŸš¶ 3-5 min walk across KM Footbridge
               </text>
             </g>
 
@@ -234,7 +234,7 @@ export const CampusMapGuide: React.FC = () => {
                 Kahawa Wendani
               </text>
               <text x="0" y="12" fill="#B45309" fontSize="9" fontWeight="semibold" textAnchor="middle">
-                🛒 QuickMart (8-10 min)
+                ðŸ›’ QuickMart (8-10 min)
               </text>
             </g>
 
@@ -245,7 +245,7 @@ export const CampusMapGuide: React.FC = () => {
                 Ruiru / Toll
               </text>
               <text x="0" y="12" fill="#B45309" fontSize="9" fontWeight="semibold" textAnchor="middle">
-                🛵 5 min Boda (KES 50)
+                ðŸ›µ 5 min Boda (KES 50)
               </text>
             </g>
           </svg>
@@ -255,20 +255,20 @@ export const CampusMapGuide: React.FC = () => {
         <div className="p-5 bg-slate-50 rounded-3xl border border-slate-200/90 space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
-              <span className="text-[11px] font-extrabold text-[#047857] uppercase tracking-wider block">
+              <span className="text-[11px] font-extrabold text-[#2563EB] uppercase tracking-wider block">
                 Selected Campus Gate
               </span>
               <h3 className="font-display font-extrabold text-lg text-slate-900 mt-0.5 flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-[#047857]" />
+                <MapPin className="w-5 h-5 text-[#2563EB]" />
                 {gateInfo.name}
               </h3>
             </div>
 
             <div className="flex items-center gap-2">
               <span className="text-xs font-bold text-slate-700 bg-white border border-slate-200 px-3 py-1 rounded-xl">
-                🚶 {gateInfo.walkingTimeFromLibrary} walk to Library
+                ðŸš¶ {gateInfo.walkingTimeFromLibrary} walk to Library
               </span>
-              <span className="text-xs font-bold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-xl">
+              <span className="text-xs font-bold text-blue-800 bg-blue-100 px-3 py-1 rounded-xl">
                 Open 5:30 AM - 11:00 PM
               </span>
             </div>
@@ -281,7 +281,7 @@ export const CampusMapGuide: React.FC = () => {
           <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-700 pt-2 border-t border-slate-200/60">
             <span>Serves student residences in:</span>
             {gateInfo.walkingZones.map((z, i) => (
-              <span key={i} className="bg-white border border-slate-200 px-2.5 py-1 rounded-lg text-xs font-bold text-[#047857] shadow-2xs">
+              <span key={i} className="bg-white border border-slate-200 px-2.5 py-1 rounded-lg text-xs font-bold text-[#2563EB] shadow-2xs">
                 {z}
               </span>
             ))}
@@ -294,7 +294,7 @@ export const CampusMapGuide: React.FC = () => {
           <div className="p-5 bg-white rounded-3xl border border-slate-200/90 space-y-3 shadow-2xs">
             <div className="flex items-center justify-between">
               <span className="font-display font-extrabold text-sm text-slate-900">KM (Directly at Gate)</span>
-              <span className="text-[10px] font-bold text-[#047857] bg-emerald-50 px-2 py-0.5 rounded-full">
+              <span className="text-[10px] font-bold text-[#2563EB] bg-blue-50 px-2 py-0.5 rounded-full">
                 3 min walk
               </span>
             </div>
@@ -306,7 +306,7 @@ export const CampusMapGuide: React.FC = () => {
                 <span>Bedsitters:</span>
                 <span className="font-bold">KES 6,500 - 8,500</span>
               </div>
-              <div className="flex justify-between text-emerald-700">
+              <div className="flex justify-between text-blue-700">
                 <span>Daily Transit Cost:</span>
                 <span className="font-bold">KES 0 (Walk)</span>
               </div>

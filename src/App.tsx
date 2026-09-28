@@ -300,7 +300,7 @@ export default function App() {
   ]);
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 flex flex-col selection:bg-[#047857] selection:text-white">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 flex flex-col selection:bg-[#2563EB] selection:text-white">
       {/* Top Bar Contract with Free Viewing & Discreet Mode */}
       <Navbar
         activeTab={activeTab}
@@ -320,7 +320,7 @@ export default function App() {
       <div className="bg-slate-900 text-white text-[11px] py-2 px-4 border-b border-slate-800">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
             <span className="font-semibold text-slate-300">
               Free Viewing Policy:
             </span>
@@ -340,7 +340,7 @@ export default function App() {
             {isAdmin ? (
               <button
                 onClick={() => setIsAdminPanelOpen(true)}
-                className="text-emerald-400 hover:text-emerald-300 font-bold underline flex items-center gap-1 cursor-pointer"
+                className="text-blue-400 hover:text-blue-300 font-bold underline flex items-center gap-1 cursor-pointer"
               >
                 <Unlock className="w-3 h-3" />
                 <span>Admin Vault Active (Unmasked)</span>
@@ -383,7 +383,7 @@ export default function App() {
             <div className="my-6 flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-2">
                 <span className="text-xs font-bold text-slate-700">
-                  Showing <strong className="text-[#047857]">{filteredProperties.length}</strong> verified residences & rooms
+                  Showing <strong className="text-[#2563EB]">{filteredProperties.length}</strong> verified residences & rooms
                 </span>
 
                 <button
@@ -410,7 +410,7 @@ export default function App() {
                     setSearchQuery('');
                     setFilterFavoritesOnly(false);
                   }}
-                  className="text-xs font-bold text-[#047857] hover:underline cursor-pointer"
+                  className="text-xs font-bold text-[#2563EB] hover:underline cursor-pointer"
                 >
                   Reset All Filters
                 </button>
@@ -452,7 +452,7 @@ export default function App() {
                     setSearchQuery('');
                     setFilterFavoritesOnly(false);
                   }}
-                  className="py-2 px-5 rounded-xl bg-[#047857] text-white text-xs font-bold shadow-xs hover:bg-[#065F46] cursor-pointer"
+                  className="py-2 px-5 rounded-xl bg-[#2563EB] text-white text-xs font-bold shadow-xs hover:bg-[#1D4ED8] cursor-pointer"
                 >
                   Clear Filters
                 </button>
@@ -482,21 +482,21 @@ export default function App() {
       <footer className="bg-white border-t border-slate-200 py-10 mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 rounded-lg bg-[#047857] flex items-center justify-center text-white font-display font-black text-sm">
+            <div className="w-7 h-7 rounded-lg bg-[#2563EB] flex items-center justify-center text-white font-display font-black text-sm">
               KU
             </div>
             <span className="font-display font-bold text-slate-900">
               KU Room Finders
             </span>
-            <span className="text-slate-300">·</span>
-            <span>100% Free Room Viewings · Pay After Viewing Escrow System</span>
+            <span className="text-slate-300">Â·</span>
+            <span>100% Free Room Viewings Â· Pay After Viewing Escrow System</span>
           </div>
 
           <div className="flex items-center gap-4 font-medium text-slate-600">
             <button onClick={() => setActiveTab('properties')} className="hover:text-slate-900 cursor-pointer">Hostels & Rooms</button>
             <button onClick={() => setActiveTab('roommates')} className="hover:text-slate-900 cursor-pointer">Roommate Matching</button>
             <button onClick={() => setActiveTab('campus-map')} className="hover:text-slate-900 cursor-pointer">Campus Gates</button>
-            <button onClick={() => handleLaunchDiscreetPayment(null, 'free_viewing')} className="hover:text-slate-900 text-[#047857] font-bold cursor-pointer">Free Viewing Pass</button>
+            <button onClick={() => handleLaunchDiscreetPayment(null, 'free_viewing')} className="hover:text-slate-900 text-[#2563EB] font-bold cursor-pointer">Free Viewing Pass</button>
             <button onClick={() => setIsAdminPanelOpen(true)} className="hover:text-slate-900 text-amber-700 font-bold cursor-pointer">Admin Vault</button>
           </div>
         </div>

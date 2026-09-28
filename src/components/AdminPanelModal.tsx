@@ -81,17 +81,17 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
         {/* Header */}
         <div className="p-5 border-b border-slate-200 bg-slate-900 text-white flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center shadow-md">
+            <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-md">
               <ShieldCheck className="w-6 h-6 text-white" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="font-display font-extrabold text-lg text-white">
-                  KU Room Finders · Admin Security Vault
+                  KU Room Finders Â· Admin Security Vault
                 </h3>
                 {isAdmin ? (
-                  <span className="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span className="text-[10px] bg-blue-500/20 text-blue-400 border border-blue-500/30 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
                     Admin Vault Active
                   </span>
                 ) : (
@@ -101,7 +101,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                 )}
               </div>
               <p className="text-xs text-slate-400 mt-0.5">
-                Restricted Agency Portal · Server authentication required
+                Restricted Agency Portal Â· Server authentication required
               </p>
             </div>
           </div>
@@ -160,9 +160,9 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                       : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
-                  <CreditCard className="w-3.5 h-3.5 text-[#047857]" />
+                  <CreditCard className="w-3.5 h-3.5 text-[#2563EB]" />
                   <span>House Hunting Escrow Ledger</span>
-                  <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] flex items-center justify-center font-black">
+                  <span className="w-5 h-5 rounded-full bg-blue-100 text-blue-800 text-[10px] flex items-center justify-center font-black">
                     {houseHuntingPayments.length}
                   </span>
                 </button>
@@ -208,10 +208,10 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
             {/* Tab 1: Unmasked Caretaker Credentials Vault */}
             {activeTab === 'credentials' && (
               <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-4 bg-emerald-50 rounded-2xl border border-emerald-200">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-4 bg-blue-50 rounded-2xl border border-blue-200">
                   <div>
                     <h4 className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
-                      <Unlock className="w-4 h-4 text-emerald-700" />
+                      <Unlock className="w-4 h-4 text-blue-700" />
                       <span>Unmasked Landlord & Caretaker Registry</span>
                     </h4>
                     <p className="text-xs text-slate-600 mt-0.5">
@@ -247,13 +247,13 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                               {prop.title}
                             </span>
                             <span className="text-[10px] text-slate-400">
-                              {prop.neighborhood} · {prop.vacantRoomsCount} Vacant
+                              {prop.neighborhood} Â· {prop.vacantRoomsCount} Vacant
                             </span>
                           </td>
                           <td className="p-3 font-semibold text-slate-800">
                             {prop.caretakerName}
                           </td>
-                          <td className="p-3 font-mono font-bold text-emerald-700">
+                          <td className="p-3 font-mono font-bold text-blue-700">
                             {prop.caretakerPhone}
                           </td>
                           <td className="p-3">
@@ -261,7 +261,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                               href={buildWhatsAppUrl(`Hello Kelly, I need help with ${prop.title}.`)}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="px-2 py-1 rounded-lg bg-emerald-100 text-emerald-800 font-bold text-[10px] inline-flex items-center gap-1 hover:bg-emerald-200"
+                              className="px-2 py-1 rounded-lg bg-blue-100 text-blue-800 font-bold text-[10px] inline-flex items-center gap-1 hover:bg-blue-200"
                             >
                               <MessageCircle className="w-3 h-3" />
                               <span>Direct WhatsApp</span>
@@ -279,7 +279,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                                 href={buildWhatsAppUrl(`Hello Kelly, I need help with ${prop.title}.`)}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800 font-bold text-[10px] inline-flex items-center gap-1 hover:bg-emerald-200"
+                                className="px-2.5 py-1 rounded-lg bg-blue-100 text-blue-800 font-bold text-[10px] inline-flex items-center gap-1 hover:bg-blue-200"
                               >
                                 <MessageCircle className="w-3 h-3" />
                                 <span>WhatsApp Kelly</span>
@@ -308,12 +308,12 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
             {activeTab === 'payments' && (
               <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  <div className="p-4 bg-emerald-50 rounded-2xl border border-emerald-200">
-                    <span className="text-xs font-bold text-emerald-800 block">Total Post-Viewing Escrow Vaulted</span>
+                  <div className="p-4 bg-blue-50 rounded-2xl border border-blue-200">
+                    <span className="text-xs font-bold text-blue-800 block">Total Post-Viewing Escrow Vaulted</span>
                     <span className="text-2xl font-display font-black text-slate-900 tabular-nums">
                       KES {totalEscrowHeld.toLocaleString()}
                     </span>
-                    <span className="text-[10px] text-emerald-600 block mt-0.5">Holding deposits & placements</span>
+                    <span className="text-[10px] text-blue-600 block mt-0.5">Holding deposits & placements</span>
                   </div>
 
                   <div className="p-4 bg-amber-50 rounded-2xl border border-amber-200">
@@ -360,7 +360,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                             <td className="p-3 font-mono font-bold text-slate-900">
                               {pay.clearancePassCode}
                               {pay.amount === 0 && (
-                                <span className="text-[9px] bg-emerald-100 text-[#047857] px-1.5 py-0.2 rounded font-black block w-fit mt-0.5">
+                                <span className="text-[9px] bg-blue-100 text-[#2563EB] px-1.5 py-0.2 rounded font-black block w-fit mt-0.5">
                                   FREE VIEWING
                                 </span>
                               )}
@@ -369,7 +369,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                               <span className="font-bold text-slate-900 block">{pay.studentName}</span>
                               <span className="font-mono text-[10px] text-slate-400">{pay.studentRegNo}</span>
                             </td>
-                            <td className="p-3 font-mono font-bold text-emerald-700">
+                            <td className="p-3 font-mono font-bold text-blue-700">
                               {pay.amount === 0 ? 'FREE-PASS' : pay.mpesaCode}
                             </td>
                             <td className="p-3 font-semibold text-slate-600 text-[11px]">
@@ -384,7 +384,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                             </td>
                             <td className="p-3 font-display font-black text-slate-900 tabular-nums">
                               {pay.amount === 0 ? (
-                                <span className="text-emerald-700 font-bold">KES 0 (Pay Later)</span>
+                                <span className="text-blue-700 font-bold">KES 0 (Pay Later)</span>
                               ) : (
                                 `KES ${pay.amount.toLocaleString()}`
                               )}
@@ -394,7 +394,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                                 onClick={() => onViewClearanceSlip && onViewClearanceSlip(pay)}
                                 className="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-[10px] flex items-center gap-1"
                               >
-                                <Ticket className="w-3 h-3 text-[#047857]" />
+                                <Ticket className="w-3 h-3 text-[#2563EB]" />
                                 <span>Voucher</span>
                               </button>
                             </td>
@@ -438,19 +438,19 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                             </h5>
                             <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
                               prop.approvalStatus === 'approved'
-                                ? 'bg-emerald-100 text-emerald-800'
+                                ? 'bg-blue-100 text-blue-800'
                                 : 'bg-amber-100 text-amber-900'
                             }`}>
                               {prop.approvalStatus}
                             </span>
                           </div>
                           <p className="text-xs text-slate-500 mt-0.5">
-                            {prop.neighborhood} · KES {prop.price.toLocaleString()}/{prop.pricePeriod} · Caretaker: {prop.caretakerName} ({prop.caretakerPhone})
+                            {prop.neighborhood} Â· KES {prop.price.toLocaleString()}/{prop.pricePeriod} Â· Caretaker: {prop.caretakerName} ({prop.caretakerPhone})
                           </p>
                           {prop.scoutName && (
                             <span className="text-[10px] bg-amber-50 text-amber-900 border border-amber-200 px-2 py-0.5 rounded-md font-bold mt-1 inline-flex items-center gap-1">
                               <span>Scout: {prop.scoutName} ({prop.scoutRegNo})</span>
-                              <span>· Bounty: KES {prop.listingBountyKes?.toLocaleString() || '800'}</span>
+                              <span>Â· Bounty: KES {prop.listingBountyKes?.toLocaleString() || '800'}</span>
                             </span>
                           )}
                         </div>
@@ -472,18 +472,18 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                           onClick={() => onToggleVerifyProperty(prop.id)}
                           className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-colors ${
                             prop.isVerified
-                              ? 'bg-emerald-50 text-emerald-800 border border-emerald-300'
+                              ? 'bg-blue-50 text-blue-800 border border-blue-300'
                               : 'bg-slate-200 text-slate-700'
                           }`}
                         >
-                          {prop.isVerified ? '✓ Verified Badge Active' : 'Mark Verified'}
+                          {prop.isVerified ? 'âœ“ Verified Badge Active' : 'Mark Verified'}
                         </button>
 
                         {prop.approvalStatus === 'pending_review' ? (
                           <>
                             <button
                               onClick={() => onApproveProperty(prop.id)}
-                              className="px-3 py-1.5 rounded-xl bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700"
+                              className="px-3 py-1.5 rounded-xl bg-blue-600 text-white font-bold text-xs hover:bg-blue-700"
                             >
                               Approve Listing
                             </button>
@@ -514,7 +514,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
               <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-3">
                 <div className="flex items-center justify-between">
                   <h4 className="font-bold text-sm text-slate-900 flex items-center gap-1.5">
-                    <ShieldCheck className="w-4 h-4 text-emerald-700" />
+                    <ShieldCheck className="w-4 h-4 text-blue-700" />
                     <span>Real-Time Security & PII Protection Audit Trail</span>
                   </h4>
                   <span className="text-xs text-slate-400 font-mono">Immutable Log Stream</span>

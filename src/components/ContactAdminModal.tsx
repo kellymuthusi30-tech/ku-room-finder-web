@@ -46,7 +46,7 @@ export const ContactAdminModal: React.FC<ContactAdminModalProps> = ({
       <div className="w-full max-w-md overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl">
         <div className="flex items-center justify-between border-b border-slate-200 bg-slate-900 p-5 text-white">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#25D366] text-white">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#2563EB] text-white">
               <MessageCircle className="h-5 w-5 fill-white" />
             </div>
             <div>
@@ -62,25 +62,25 @@ export const ContactAdminModal: React.FC<ContactAdminModalProps> = ({
         <form onSubmit={handleSubmit} className="space-y-4 p-5">
           <label className="block text-xs font-bold text-slate-700">
             What do you need help with?
-            <select value={requestType} onChange={(event) => setRequestType(event.target.value as (typeof REQUEST_TYPES)[number])} className="mt-1.5 w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-medium text-slate-800 outline-none focus:border-[#047857]">
+            <select value={requestType} onChange={(event) => setRequestType(event.target.value as (typeof REQUEST_TYPES)[number])} className="mt-1.5 w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-medium text-slate-800 outline-none focus:border-[#2563EB]">
               {REQUEST_TYPES.map((type) => <option key={type}>{type}</option>)}
             </select>
           </label>
 
           {propertyTitle && (
-            <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs text-emerald-900">
+            <div className="rounded-xl border border-blue-200 bg-blue-50 px-3 py-2 text-xs text-blue-900">
               This message will include: <strong>{propertyTitle}</strong>
             </div>
           )}
 
           <label className="block text-xs font-bold text-slate-700">
             Message <span className="font-normal text-slate-400">(optional)</span>
-            <textarea value={message} onChange={(event) => setMessage(event.target.value)} rows={4} maxLength={500} placeholder="Tell Kelly what you need..." className="mt-1.5 w-full resize-none rounded-xl border border-slate-200 px-3 py-3 text-sm text-slate-800 outline-none focus:border-[#047857]" />
+            <textarea value={message} onChange={(event) => setMessage(event.target.value)} rows={4} maxLength={500} placeholder="Tell Kelly what you need..." className="mt-1.5 w-full resize-none rounded-xl border border-slate-200 px-3 py-3 text-sm text-slate-800 outline-none focus:border-[#2563EB]" />
           </label>
 
           <p className="text-[11px] leading-relaxed text-slate-500">WhatsApp opens with your message ready to send. Do not send passwords, PINs, or national ID numbers.</p>
 
-          <button type="submit" className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-3.5 text-sm font-extrabold text-white shadow-sm hover:bg-[#20ba59]">
+          <button type="submit" className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#2563EB] px-4 py-3.5 text-sm font-extrabold text-white shadow-sm hover:bg-[#1D4ED8]">
             <Send className="h-4 w-4" />
             Continue to WhatsApp
           </button>

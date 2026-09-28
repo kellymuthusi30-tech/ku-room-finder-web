@@ -97,14 +97,14 @@ export const BookingsModal: React.FC<BookingsModalProps> = ({
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div>
-                      <span className="text-[10px] font-bold text-[#047857] uppercase tracking-wider block">
-                        Ref #{booking.id} {booking.clearancePassCode ? `· ${booking.clearancePassCode}` : ''}
+                      <span className="text-[10px] font-bold text-[#2563EB] uppercase tracking-wider block">
+                        Ref #{booking.id} {booking.clearancePassCode ? `Â· ${booking.clearancePassCode}` : ''}
                       </span>
                       <h4 className="font-display font-bold text-sm text-slate-900">
                         {booking.propertyTitle}
                       </h4>
                       <span className="text-xs text-slate-500 flex items-center gap-1 mt-0.5">
-                        <MapPin className="w-3 h-3 text-[#047857]" />
+                        <MapPin className="w-3 h-3 text-[#2563EB]" />
                         {booking.neighborhood}
                       </span>
                     </div>
@@ -112,7 +112,7 @@ export const BookingsModal: React.FC<BookingsModalProps> = ({
                     <span
                       className={`text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase ${
                         isFree
-                          ? 'bg-emerald-100 text-[#047857] border border-emerald-300'
+                          ? 'bg-blue-100 text-[#2563EB] border border-blue-300'
                           : booking.status === 'reserved'
                           ? 'bg-purple-100 text-purple-900'
                           : 'bg-amber-100 text-amber-900'
@@ -148,22 +148,22 @@ export const BookingsModal: React.FC<BookingsModalProps> = ({
                   {booking.viewingDate && (
                     <div className="p-2.5 bg-white rounded-xl border border-slate-200/70 text-xs text-slate-700 flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4 text-[#047857]" />
+                        <Calendar className="w-4 h-4 text-[#2563EB]" />
                         <span>{booking.viewingDate} ({booking.viewingTime})</span>
                       </div>
-                      <span className="text-[11px] font-semibold text-emerald-700">ACCREDITED ESCORT</span>
+                      <span className="text-[11px] font-semibold text-blue-700">ACCREDITED ESCORT</span>
                     </div>
                   )}
 
                   {/* Financial Status: Free Viewing vs Paid Escrow */}
                   {isFree ? (
-                    <div className="p-3 bg-emerald-50/80 rounded-xl border border-emerald-200 text-xs space-y-2">
+                    <div className="p-3 bg-blue-50/80 rounded-xl border border-blue-200 text-xs space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-[10px] text-emerald-800 uppercase font-extrabold flex items-center gap-1">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#047857]" />
+                        <span className="text-[10px] text-blue-800 uppercase font-extrabold flex items-center gap-1">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#2563EB]" />
                           <span>Inspection Cost: KES 0 (100% Free)</span>
                         </span>
-                        <span className="text-[10px] bg-emerald-200 text-emerald-950 px-2 py-0.5 rounded font-bold">
+                        <span className="text-[10px] bg-blue-200 text-blue-950 px-2 py-0.5 rounded font-bold">
                           Pay After Viewing
                         </span>
                       </div>
@@ -177,7 +177,7 @@ export const BookingsModal: React.FC<BookingsModalProps> = ({
                             onClose();
                             onPayAfterViewing(booking);
                           }}
-                          className="w-full py-2 px-3 bg-[#047857] hover:bg-[#065F46] text-white text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 transition-colors shadow-2xs cursor-pointer"
+                          className="w-full py-2 px-3 bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 transition-colors shadow-2xs cursor-pointer"
                         >
                           <CreditCard className="w-3.5 h-3.5 text-[#F59E0B]" />
                           <span>Liked the Room? Pay After Viewing to Reserve Unit</span>
@@ -185,17 +185,17 @@ export const BookingsModal: React.FC<BookingsModalProps> = ({
                       )}
                     </div>
                   ) : (
-                    <div className="p-2.5 bg-emerald-50 rounded-xl border border-emerald-200 text-xs text-emerald-900 flex items-center justify-between">
+                    <div className="p-2.5 bg-blue-50 rounded-xl border border-blue-200 text-xs text-blue-900 flex items-center justify-between">
                       <div>
-                        <span className="block text-[10px] text-emerald-700 uppercase font-bold">
+                        <span className="block text-[10px] text-blue-700 uppercase font-bold">
                           Post-Viewing Escrow Ref
                         </span>
                         <span className="font-mono font-black text-sm">
                           {maskMpesaCode(booking.mpesaCode, isAdmin)}
                         </span>
                         {!isAdmin && (
-                          <span className="text-[9px] text-emerald-600 block">
-                            Protected · Unmasked in Admin Vault
+                          <span className="text-[9px] text-blue-600 block">
+                            Protected Â· Unmasked in Admin Vault
                           </span>
                         )}
                       </div>
@@ -213,7 +213,7 @@ export const BookingsModal: React.FC<BookingsModalProps> = ({
                         href={buildWhatsAppUrl(`Hello Kelly, I need help with ${booking.propertyTitle}.`)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-bold text-[#047857] flex items-center gap-1 hover:underline"
+                        className="font-bold text-[#2563EB] flex items-center gap-1 hover:underline"
                       >
                         <MessageCircle className="w-3 h-3" />
                         <span>WhatsApp Kelly</span>
@@ -240,7 +240,7 @@ export const BookingsModal: React.FC<BookingsModalProps> = ({
                   onClose();
                   onOpenAdminPanel();
                 }}
-                className="text-xs font-bold text-[#047857] hover:underline flex items-center justify-center gap-1 mx-auto cursor-pointer"
+                className="text-xs font-bold text-[#2563EB] hover:underline flex items-center justify-center gap-1 mx-auto cursor-pointer"
               >
                 <Shield className="w-3.5 h-3.5" />
                 <span>Log into Admin Security Vault to view unmasked credentials</span>

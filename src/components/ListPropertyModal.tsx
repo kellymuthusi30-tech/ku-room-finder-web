@@ -161,7 +161,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
 
     if (isScout) {
       setSubmissionSuccess(
-        `🎉 House Listing Job Submitted! Your scout entry for "${newProp.title}" is queued for Admin verification. Once our Super Admin calls the caretaker and approves the room, your bounty of KES ${currentBounty.toLocaleString()} will be sent to ${scoutPhone}.`
+        `ðŸŽ‰ House Listing Job Submitted! Your scout entry for "${newProp.title}" is queued for Admin verification. Once our Super Admin calls the caretaker and approves the room, your bounty of KES ${currentBounty.toLocaleString()} will be sent to ${scoutPhone}.`
       );
     } else {
       setSubmissionSuccess(
@@ -188,7 +188,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
         {/* Header */}
         <div className="p-4 sm:p-5 border-b border-slate-100 flex items-center justify-between bg-white shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#047857] to-[#065F46] flex items-center justify-center text-white shadow-md">
+            <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] flex items-center justify-center text-white shadow-md">
               <Briefcase className="w-5 h-5 text-amber-400" />
             </div>
             <div>
@@ -201,7 +201,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
                 </span>
               </div>
               <p className="text-xs text-slate-500">
-                KU Student Scout Job · List Vacant Rooms or Manage Existing Listings
+                KU Student Scout Job Â· List Vacant Rooms or Manage Existing Listings
               </p>
             </div>
           </div>
@@ -224,7 +224,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
               }}
               className={`pb-3 px-3 border-b-2 transition-all flex items-center gap-1.5 cursor-pointer ${
                 activeTab === 'scout_job'
-                  ? 'border-[#047857] text-[#047857]'
+                  ? 'border-[#2563EB] text-[#2563EB]'
                   : 'border-transparent text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -242,7 +242,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
               }}
               className={`pb-3 px-3 border-b-2 transition-all flex items-center gap-1.5 cursor-pointer ${
                 activeTab === 'landlord'
-                  ? 'border-[#047857] text-[#047857]'
+                  ? 'border-[#2563EB] text-[#2563EB]'
                   : 'border-transparent text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -257,7 +257,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
               }}
               className={`pb-3 px-3 border-b-2 transition-all flex items-center gap-1.5 cursor-pointer ${
                 activeTab === 'manage_listings'
-                  ? 'border-[#047857] text-[#047857]'
+                  ? 'border-[#2563EB] text-[#2563EB]'
                   : 'border-transparent text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -270,7 +270,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
         {/* Content Body */}
         {submissionSuccess ? (
           <div className="p-8 text-center space-y-4 flex-1 flex flex-col items-center justify-center">
-            <div className="w-14 h-14 rounded-full bg-emerald-100 text-[#047857] flex items-center justify-center mx-auto shadow-sm">
+            <div className="w-14 h-14 rounded-full bg-blue-100 text-[#2563EB] flex items-center justify-center mx-auto shadow-sm">
               <Check className="w-8 h-8 stroke-[3]" />
             </div>
             <h4 className="font-display font-extrabold text-slate-900 text-lg">
@@ -294,7 +294,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
               </button>
               <button
                 onClick={onClose}
-                className="py-2.5 px-5 rounded-xl bg-[#047857] hover:bg-[#065F46] text-white text-xs font-bold transition-colors cursor-pointer"
+                className="py-2.5 px-5 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-bold transition-colors cursor-pointer"
               >
                 Done
               </button>
@@ -312,7 +312,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
                   Edit prices, vacancies, gate distance, amenities, or descriptions.
                 </p>
               </div>
-              <span className="text-xs font-bold text-[#047857] bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+              <span className="text-xs font-bold text-[#2563EB] bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">
                 {properties.length} Listed Properties
               </span>
             </div>
@@ -335,17 +335,17 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
                           {prop.title}
                         </h5>
                         <span className={`text-[9px] font-extrabold px-2 py-0.5 rounded-full uppercase ${
-                          prop.approvalStatus === 'approved' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-900'
+                          prop.approvalStatus === 'approved' ? 'bg-blue-100 text-blue-800' : 'bg-amber-100 text-amber-900'
                         }`}>
                           {prop.approvalStatus}
                         </span>
                       </div>
                       <div className="text-[11px] text-slate-500 flex items-center gap-2 mt-0.5">
-                        <span className="font-semibold text-[#047857]">{prop.neighborhood}</span>
-                        <span>·</span>
+                        <span className="font-semibold text-[#2563EB]">{prop.neighborhood}</span>
+                        <span>Â·</span>
                         <span>KES {prop.price.toLocaleString()}/mo</span>
-                        <span>·</span>
-                        <span className="text-emerald-700 font-bold">{prop.vacantRoomsCount} Vacant</span>
+                        <span>Â·</span>
+                        <span className="text-blue-700 font-bold">{prop.vacantRoomsCount} Vacant</span>
                       </div>
                       <span className="text-[10px] text-slate-400 block mt-0.5 flex items-center gap-1 font-mono">
                         <Lock className="w-3 h-3 text-amber-600" />
@@ -361,7 +361,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
                         onOpenEditProperty(prop);
                       }
                     }}
-                    className="py-2 px-4 rounded-xl bg-slate-900 hover:bg-[#047857] text-white text-xs font-bold flex items-center gap-1.5 transition-colors self-end sm:self-center shadow-xs cursor-pointer"
+                    className="py-2 px-4 rounded-xl bg-slate-900 hover:bg-[#2563EB] text-white text-xs font-bold flex items-center gap-1.5 transition-colors self-end sm:self-center shadow-xs cursor-pointer"
                   >
                     <Edit className="w-3.5 h-3.5" />
                     <span>Edit House</span>
@@ -375,7 +375,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
           <form onSubmit={handleSubmit} className="p-5 sm:p-6 overflow-y-auto space-y-4 flex-1 text-xs">
             {/* Scout Job Explainer & Bounty Calculator */}
             {activeTab === 'scout_job' && (
-              <div className="p-4 bg-gradient-to-br from-emerald-50 via-teal-50 to-amber-50 rounded-2xl border border-emerald-200 space-y-2">
+              <div className="p-4 bg-gradient-to-br from-blue-50 via-cyan-50 to-amber-50 rounded-2xl border border-blue-200 space-y-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Award className="w-5 h-5 text-amber-600" />
@@ -383,7 +383,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
                       KU Student House Scout Bounty Gig
                     </span>
                   </div>
-                  <span className="text-xs font-black bg-[#047857] text-white px-2.5 py-1 rounded-full shadow-2xs">
+                  <span className="text-xs font-black bg-[#2563EB] text-white px-2.5 py-1 rounded-full shadow-2xs">
                     Earn KES {currentBounty.toLocaleString()} Bounty
                   </span>
                 </div>
@@ -401,7 +401,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
                       value={scoutName}
                       onChange={(e) => setScoutName(e.target.value)}
                       placeholder="e.g. Brian Kiprop"
-                      className="w-full px-2.5 py-1.5 bg-white border border-emerald-300 rounded-xl"
+                      className="w-full px-2.5 py-1.5 bg-white border border-blue-300 rounded-xl"
                     />
                   </div>
                   <div>
@@ -412,7 +412,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
                       value={scoutRegNo}
                       onChange={(e) => setScoutRegNo(e.target.value)}
                       placeholder="e.g. C01/2940/2023"
-                      className="w-full px-2.5 py-1.5 bg-white border border-emerald-300 rounded-xl font-mono"
+                      className="w-full px-2.5 py-1.5 bg-white border border-blue-300 rounded-xl font-mono"
                     />
                   </div>
                   <div>
@@ -423,7 +423,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
                       value={scoutPhone}
                       onChange={(e) => setScoutPhone(e.target.value)}
                       placeholder="e.g. 0712345678"
-                      className="w-full px-2.5 py-1.5 bg-white border border-emerald-300 rounded-xl font-mono text-emerald-800 font-bold"
+                      className="w-full px-2.5 py-1.5 bg-white border border-blue-300 rounded-xl font-mono text-blue-800 font-bold"
                     />
                   </div>
                 </div>
@@ -521,7 +521,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 text-amber-900 font-bold">
                   <Lock className="w-4 h-4 text-amber-600" />
-                  <span>Caretaker Information (Strictly Encrypted · Admin Only)</span>
+                  <span>Caretaker Information (Strictly Encrypted Â· Admin Only)</span>
                 </div>
                 <span className="text-[9px] bg-amber-200 text-amber-950 font-black px-2 py-0.5 rounded-full uppercase">
                   Admin Vault Only
@@ -553,7 +553,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
                     placeholder="e.g. 0722000000"
                     value={caretakerPhone}
                     onChange={(e) => setCaretakerPhone(e.target.value)}
-                    className="w-full px-3 py-1.5 bg-white border border-slate-200 rounded-xl font-mono text-emerald-800 font-bold"
+                    className="w-full px-3 py-1.5 bg-white border border-slate-200 rounded-xl font-mono text-blue-800 font-bold"
                   />
                 </div>
 
@@ -608,7 +608,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
                     key={idx}
                     onClick={() => item.set(!item.state)}
                     className={`p-2 rounded-xl border cursor-pointer flex items-center justify-between transition-all ${
-                      item.state ? 'border-[#047857] bg-emerald-50 text-[#047857]' : 'border-slate-200 bg-white text-slate-600'
+                      item.state ? 'border-[#2563EB] bg-blue-50 text-[#2563EB]' : 'border-slate-200 bg-white text-slate-600'
                     }`}
                   >
                     <span className="font-semibold text-[11px]">{item.label}</span>
@@ -631,7 +631,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
 
             <button
               type="submit"
-              className="w-full py-3.5 px-4 bg-[#047857] hover:bg-[#065F46] text-white font-display font-bold text-xs sm:text-sm rounded-xl shadow-md transition-all active:scale-98 cursor-pointer flex items-center justify-center gap-2"
+              className="w-full py-3.5 px-4 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-display font-bold text-xs sm:text-sm rounded-xl shadow-md transition-all active:scale-98 cursor-pointer flex items-center justify-center gap-2"
             >
               {activeTab === 'scout_job' ? (
                 <>

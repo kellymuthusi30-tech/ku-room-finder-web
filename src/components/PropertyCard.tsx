@@ -119,7 +119,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
 
         {/* Live Vacancy Pill */}
         <div className="absolute top-3 left-3 bg-slate-900/85 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
           <span>{property.vacantRoomsCount} Vacant</span>
         </div>
 
@@ -141,7 +141,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
 
         {/* Verified Caretaker & Escrow Badge */}
         {property.isVerified && (
-          <div className="absolute bottom-3 left-3 bg-[#047857]/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-0.5 rounded-lg flex items-center gap-1 shadow-xs">
+          <div className="absolute bottom-3 left-3 bg-[#2563EB]/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-0.5 rounded-lg flex items-center gap-1 shadow-xs">
             <ShieldCheck className="w-3.5 h-3.5 text-[#F59E0B]" />
             <span>Escrow Protected</span>
           </div>
@@ -153,15 +153,15 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
         <div>
           {/* Unboxed Metadata with Typographic Separators */}
           <div className="flex items-center gap-1.5 text-xs text-slate-500 font-semibold">
-            <span className="text-[#047857]">{property.neighborhood}</span>
-            <span aria-hidden="true">·</span>
+            <span className="text-[#2563EB]">{property.neighborhood}</span>
+            <span aria-hidden="true">Â·</span>
             <span className="flex items-center gap-1 text-slate-600">
               <Footprints className="w-3.5 h-3.5 text-[#D97706]" />
               {property.walkingMinutes} min walk ({property.nearestGate})
             </span>
           </div>
 
-          <h3 className="font-display font-extrabold text-base text-slate-900 mt-1.5 group-hover:text-[#047857] transition-colors line-clamp-1">
+          <h3 className="font-display font-extrabold text-base text-slate-900 mt-1.5 group-hover:text-[#2563EB] transition-colors line-clamp-1">
             {property.title}
           </h3>
 
@@ -190,7 +190,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
             <span className="text-slate-500 flex items-center gap-1 font-medium">
               <Lock className="w-3 h-3 text-amber-600" />
               {isAdmin ? (
-                <span className="text-emerald-700 font-bold">Caretaker: {property.caretakerName}</span>
+                <span className="text-blue-700 font-bold">Caretaker: {property.caretakerName}</span>
               ) : (
                 <span>Direct Contact: <strong>Restricted to Admin</strong></span>
               )}
@@ -236,10 +236,10 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center transition-colors shadow-2xs hover:bg-emerald-200"
+                  className="w-8 h-8 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center transition-colors shadow-2xs hover:bg-blue-200"
                   title="Admin Direct WhatsApp"
                 >
-                  <MessageCircle className="w-3.5 h-3.5 text-[#047857]" />
+                  <MessageCircle className="w-3.5 h-3.5 text-[#2563EB]" />
                 </a>
               </>
             ) : (
@@ -248,7 +248,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
                   e.stopPropagation();
                   onBookViewingPass(property);
                 }}
-                className="py-1.5 px-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-[#047857] text-[11px] font-bold transition-all shadow-2xs flex items-center gap-1 cursor-pointer"
+                className="py-1.5 px-2.5 rounded-xl bg-blue-50 hover:bg-blue-100 border border-blue-300 text-[#2563EB] text-[11px] font-bold transition-all shadow-2xs flex items-center gap-1 cursor-pointer"
                 title="Schedule 100% Free Room Viewing (Pay After Viewing)"
               >
                 <Ticket className="w-3 h-3 text-[#D97706]" />
@@ -258,7 +258,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
 
             <button
               onClick={() => onSelectProperty(property)}
-              className="py-1.5 px-3 rounded-xl bg-slate-900 hover:bg-[#047857] text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1"
+              className="py-1.5 px-3 rounded-xl bg-slate-900 hover:bg-[#2563EB] text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1"
             >
               <Eye className="w-3.5 h-3.5" />
               <span>Inspect</span>
