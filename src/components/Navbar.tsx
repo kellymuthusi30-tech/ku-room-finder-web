@@ -249,6 +249,38 @@ export const Navbar: React.FC<NavbarProps> = ({
           <span>Gate Map</span>
         </button>
       </div>
+
+      {/* Mobile tools row keeps secondary actions available without widening the header */}
+      <div className="md:hidden flex items-center gap-2 overflow-x-auto border-t border-slate-200 bg-white px-3 py-2 text-[11px]">
+        <button
+          onClick={onToggleDiscreetMode}
+          className={`flex shrink-0 items-center gap-1.5 rounded-lg border px-3 py-1.5 font-bold ${
+            isDiscreetMode ? 'border-amber-300 bg-amber-100 text-amber-900' : 'border-slate-200 bg-slate-50 text-slate-700'
+          }`}
+          title={isDiscreetMode ? 'Discreet Mode Active: Amounts Masked' : 'Turn On Discreet Mode (Mask Prices)'}
+        >
+          {isDiscreetMode ? <EyeOff className="h-3.5 w-3.5 text-amber-700" /> : <Eye className="h-3.5 w-3.5 text-slate-500" />}
+          <span>Discreet Mode</span>
+        </button>
+        <button
+          onClick={onOpenListProperty}
+          className="flex shrink-0 items-center gap-1.5 rounded-lg border border-amber-300 bg-amber-50 px-3 py-1.5 font-bold text-amber-900"
+          title="House Listing Job"
+        >
+          <Briefcase className="h-3.5 w-3.5 text-amber-700" />
+          <span>Listing Job</span>
+        </button>
+        <button
+          onClick={onOpenAdminPanel}
+          className={`flex shrink-0 items-center gap-1.5 rounded-lg border px-3 py-1.5 font-bold ${
+            isAdmin ? 'border-blue-300 bg-blue-50 text-blue-900' : 'border-slate-300 bg-slate-900 text-white'
+          }`}
+          title="Administrator Security Vault"
+        >
+          {isAdmin ? <ShieldCheck className="h-3.5 w-3.5 text-blue-600" /> : <Lock className="h-3.5 w-3.5 text-amber-300" />}
+          <span>Admin Vault</span>
+        </button>
+      </div>
     </header>
   );
 };
