@@ -14,7 +14,9 @@ import {
   Eye,
   Key,
   Save,
-  CheckCircle2
+  CheckCircle2,
+  ImagePlus,
+  Trash2
 } from 'lucide-react';
 import { Property, Neighborhood, RoomType, CampusGate } from '../types';
 import { maskCaretakerPhone, maskNationalId, maskPayoutAccount, PUBLIC_CONTACT } from '../utils/security';
@@ -51,6 +53,8 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
   const [addressDesc, setAddressDesc] = useState(property.addressDescription);
   const [description, setDescription] = useState(property.description);
   const [imageUrl, setImageUrl] = useState(property.images[0] || '');
+  const [images, setImages] = useState<string[]>(property.images);
+  const [galleryError, setGalleryError] = useState('');
 
   // Caretaker credentials (only modifiable by Admin)
   const [caretakerName, setCaretakerName] = useState(property.caretakerName);
@@ -87,6 +91,8 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
       setAddressDesc(property.addressDescription);
       setDescription(property.description);
       setImageUrl(property.images[0] || '');
+      setImages(property.images);
+      setGalleryError('');
       setCaretakerName(property.caretakerName);
       setCaretakerPhone(property.caretakerPhone);
       setCaretakerWhatsApp(property.caretakerWhatsApp);
@@ -115,7 +121,7 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
     if (cctv) amenitiesList.push('CCTV & Security Guard');
     if (balcony) amenitiesList.push('Private Balcony');
 
-    const updatedImages = [...property.images];
+    const updatedImages = [...images];
     if (imageUrl.trim()) {
       updatedImages[0] = imageUrl.trim();
     }
@@ -148,6 +154,46 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
 
     onUpdateProperty(updatedProperty);
     onClose();
+  };
+
+  const handleGalleryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(event.target.files || []);
+    if (files.length === 0) return;
+
+    const availableSlots = Math.max(0, 6 - images.length);
+    const selectedFiles = files.slice(0, availableSlots);
+    if (selectedFiles.length === 0) {
+      setGalleryError('You can add up to 6 photos per listing.');
+      return;
+    }
+
+    setGalleryError('');
+    Promise.all(selectedFiles.map((file) => new Promise<string>((resolve, reject) => {
+      if (!file.type.startsWith('image/')) {
+        reject(new Error('Only image files are supported.'));
+        return;
+      }
+      if (file.size > 5 * 1024 * 1024) {
+        reject(new Error('Each photo must be 5 MB or smaller.'));
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result));
+      reader.onerror = () => reject(new Error('A photo could not be read.'));
+      reader.readAsDataURL(file);
+    }))).then((newImages) => {
+      setImages((currentImages) => [...currentImages, ...newImages].slice(0, 6));
+      if (!imageUrl.trim() && newImages[0]) setImageUrl(newImages[0]);
+    }).catch((error: Error) => setGalleryError(error.message));
+    event.target.value = '';
+  };
+
+  const handleRemoveImage = (index: number) => {
+    setImages((currentImages) => {
+      const nextImages = currentImages.filter((_, imageIndex) => imageIndex !== index);
+      setImageUrl(nextImages[0] || '');
+      return nextImages;
+    });
   };
 
   return (
@@ -500,13 +546,40 @@ export const EditPropertyModal: React.FC<EditPropertyModalProps> = ({
             />
           </div>
 
-          {/* Photo URL */}
+          {/* Property Photos */}
           <div>
-            <label className="block font-bold text-slate-700 mb-1">Main Photo URL</label>
+            <div className="flex items-center justify-between gap-3 mb-1">
+              <label className="block font-bold text-slate-700">Property Photos</label>
+              <span className="text-[10px] font-semibold text-slate-400">{images.length}/6 photos</span>
+            </div>
+            <label className="flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-dashed border-emerald-300 bg-emerald-50 px-3 py-3 text-xs font-bold text-[#047857] hover:bg-emerald-100">
+              <ImagePlus className="h-4 w-4" />
+              <span>Choose photos from gallery</span>
+              <input type="file" accept="image/*" multiple onChange={handleGalleryChange} className="sr-only" />
+            </label>
+            <p className="mt-1 text-[10px] text-slate-400">JPEG, PNG, or WebP. Maximum 5 MB per photo.</p>
+            {galleryError && <p className="mt-1 text-[11px] font-semibold text-red-600">{galleryError}</p>}
+            {images.length > 0 && (
+              <div className="mt-3 grid grid-cols-3 gap-2">
+                {images.map((image, index) => (
+                  <div key={`${image.slice(0, 24)}-${index}`} className="relative aspect-square overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
+                    <img src={image} alt={`Property photo ${index + 1}`} className="h-full w-full object-cover" />
+                    <button type="button" onClick={() => handleRemoveImage(index)} className="absolute right-1 top-1 flex h-7 w-7 items-center justify-center rounded-lg bg-black/65 text-white hover:bg-red-600" aria-label={`Remove property photo ${index + 1}`}>
+                      <Trash2 className="h-3.5 w-3.5" />
+                    </button>
+                    {index === 0 && <span className="absolute bottom-1 left-1 rounded-md bg-white/90 px-1.5 py-0.5 text-[9px] font-black uppercase text-slate-700">Main</span>}
+                  </div>
+                ))}
+              </div>
+            )}
+            <label className="mt-3 block text-[11px] font-bold text-slate-600">Or use a main photo URL</label>
             <input
               type="url"
               value={imageUrl}
-              onChange={(e) => setImageUrl(e.target.value)}
+              onChange={(e) => {
+                setImageUrl(e.target.value);
+                setImages((currentImages) => currentImages.length > 0 ? [e.target.value, ...currentImages.slice(1)] : [e.target.value]);
+              }}
               placeholder="https://..."
               className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl font-mono text-slate-800"
             />
