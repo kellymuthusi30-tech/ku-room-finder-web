@@ -43,6 +43,7 @@ import { BookingsModal } from './components/BookingsModal';
 import { AdminPanelModal } from './components/AdminPanelModal';
 import { DiscreetPaymentModal } from './components/DiscreetPaymentModal';
 import { DiscreetViewingPassModal } from './components/DiscreetViewingPassModal';
+import { ContactAdminModal } from './components/ContactAdminModal';
 import { PUBLIC_CONTACT } from './utils/security';
 
 const INITIAL_HOUSE_HUNTING_PAYMENTS: HouseHuntingPayment[] = [];
@@ -81,6 +82,7 @@ export default function App() {
   const [editingProperty, setEditingProperty] = useState<Property | null>(null);
   const [isListPropertyOpen, setIsListPropertyOpen] = useState(false);
   const [isBookingsOpen, setIsBookingsOpen] = useState(false);
+  const [isContactAdminOpen, setIsContactAdminOpen] = useState(false);
   const [isDiscreetPaymentOpen, setIsDiscreetPaymentOpen] = useState(false);
   const [discreetModalInitialMode, setDiscreetModalInitialMode] = useState<'free_viewing' | 'pay_after_viewing'>('free_viewing');
   const [discreetPaymentTargetProp, setDiscreetPaymentTargetProp] = useState<Property | null>(null);
@@ -311,6 +313,7 @@ export default function App() {
         isDiscreetMode={isDiscreetMode}
         onToggleDiscreetMode={handleToggleDiscreetMode}
         onOpenDiscreetPayment={(mode) => handleLaunchDiscreetPayment(null, mode || 'free_viewing')}
+        onOpenContactAdmin={() => setIsContactAdminOpen(true)}
       />
 
       {/* Free Viewing Guarantee Notice Banner */}
@@ -549,6 +552,11 @@ export default function App() {
           const matchedProp = properties.find((p) => p.id === booking.propertyId) || null;
           handleLaunchDiscreetPayment(matchedProp, 'pay_after_viewing');
         }}
+      />
+
+      <ContactAdminModal
+        isOpen={isContactAdminOpen}
+        onClose={() => setIsContactAdminOpen(false)}
       />
 
       {/* Discreet Free Viewing & Post-Viewing Payment Modal */}
